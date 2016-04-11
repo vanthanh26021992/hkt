@@ -1,0 +1,82 @@
+
+<%function renderEditable(beanName, beanConfig, beanState, display, deletable) { %>
+<%  var bean = beanState.bean;%>
+    <div class="UIBean" style="width: 560px; display: <%=display%>" bean="<%=beanName%>">
+      <form>
+        <div class="ui-grid-a">
+              		<span class="ui-dialog-text"><%=bean.nameDialog%></span>
+        </div>
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal" style="float: right">
+          <%if(beanConfig.edit != null && !beanConfig.edit.disable) {%>
+            <%for(var i = 0; i < beanConfig.edit.actions.length; i++) {%>
+            <%  var action =  beanConfig.edit.actions[i];%> 
+                <a class="onEditAction" action="<%=action.action%>" data-role="button" 
+                   data-icon="<%=action.icon%>"><%=action.label%></a> 
+            <%}%>
+          <%}%>
+        </div>
+        <div style="clear: right"><span/></div>
+      </form>
+    </div>
+<%}%>
+
+<%function renderTabs(config, beanStates) { %>
+  <%if(config.type == null || config.type == 'single') return ;%>
+  <div data-role="controlgroup" data-mini="true" data-type="horizontal"  data-corners="false">
+    <%var beanConfig = null ;%>
+    <%var label = null ;%>
+    <%for(var name in beanStates) { %>
+    <%
+      var beanState = beanStates[name] ;
+    %>
+
+    <%
+      var idx = name.lastIndexOf('_');
+    %>
+    <%
+      var configName = name.substring(0, idx);
+    %>
+    <%
+      var beanIdx = name.substring(idx + 1) ;
+    %>
+     <%
+       beanConfig = config.beans[configName] ;
+     %>
+    <%
+      label = beanConfig.label + ' ' + (parseInt(beanIdx) + 1);
+    %>
+
+    <%
+      }
+    %>
+
+  </div>
+<%
+  }
+%>
+
+<div class="UIBeans">
+  <div class="UIBeansTab" style="padding: 10px 0px">
+    <%
+      renderTabs(config, beanStates);
+    %>
+  </div>
+  <%
+    var render = null ;
+      for(var name in beanStates) {
+    var beanConfig = null ;
+    if(config.type == 'array') {
+      var idx = name.lastIndexOf('_');
+      var configName = name.substring(0, idx);
+      beanConfig = config.beans[configName] ;
+    } else {
+      beanConfig = config.beans[name]; 
+    }
+    
+    var beanState  = beanStates[name] ;
+      render = renderEditable ;
+    var display = beanState.select ? 'block' : 'none' ;
+    render(name, beanConfig, beanState, display, config.type == 'array') ;
+      }
+  %>
+</div>

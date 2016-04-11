@@ -1,0 +1,24 @@
+<ul data-role="listview">
+  <li><a class="onMy">My HKT</a>
+  <li><a class="onMyTest">My HKT Test</a>
+
+  <li>
+    <div data-role="collapsible-set">
+      <%moduleManager.getModules().forEach(function(module) { %>
+        <div data-role="collapsible" data-collapsed="false">
+          <h3 nav-submenu="<%=module.config.name%>"><%=res(module.config.name)%></h3>
+          <ul data-role="listview">
+            <%module.screens.forEach(function(screen) { %>
+              <li data-mini="true">
+                <a class="onClickMenuItem" moduleId="<%=module.config.name%>/<%=screen.config.name%>" href="#">
+                  <%=res(module.config.name + '.' + screen.config.name)%>
+                </a>
+              </li>
+            <%}); %>
+          </ul>
+        </div>
+      <%}); %>
+    </div>
+  </li>
+
+</ul>

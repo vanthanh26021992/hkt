@@ -1,0 +1,8 @@
+<div class="w-report" style="padding: 0px">  
+  <div class='ChartSection w-chart  ui-grid-a' 
+       style="display: none">
+    <div class='ui-block-a' style="width: 90%">
+      <div class="ChartContainer" style="min-height: 400px"></div>
+    </div>
+  </div>
+</div> 

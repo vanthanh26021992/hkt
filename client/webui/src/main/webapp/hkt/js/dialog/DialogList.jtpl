@@ -1,0 +1,11 @@
+<br/>
+<div style="border: 1px solid">
+  <div class="layout-150-rest">
+    <div class=" MembershipsList" style="border: 1px solid; min-height: 350px; min-width: 500px">
+    </div>
+      <div data-role="controlgroup" data-mini="true" data-type="horizontal" style="float: right; margin-right: 40px">
+      <a class="onExit" data-role="button">Thoát</a>
+    </div>
+    <div style="clear: both"></div>
+  </div>
+</div>

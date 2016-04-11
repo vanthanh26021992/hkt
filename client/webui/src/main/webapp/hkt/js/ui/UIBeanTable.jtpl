@@ -1,0 +1,100 @@
+
+<%function renderInputField(cell) { %>
+  <input class="onChangeInput" type="text" name="<%=cell%>" 
+         value="" data-mini="true" />
+<%}%>
+
+<%function renderSelectInputField(field, bean) { %>
+ <div class="UIBeanCustomInput">
+    <%var inputVal = field.custom.getDisplay(bean); %>
+    <input class="onBlurCustomInput onChangeCustomInput onSelectSearch" 
+           type="search" name="<%=field.field%>" 
+           value="<%=inputVal%>" data-mini="true"  autocomplete="off"/>
+    <div class="UIBeanCustomInputSelector1"></div>
+  </div>
+<%}%>
+
+
+<%function renderRow(node, level, config, isEnd, nameContainer,k) {%>
+<%  var collapsedSign = node.isCollapsed() ? '+' : '-';%>
+  <tr>  
+        <%
+          var bean = node.bean ;
+        %>
+        <%var fields = config.bean.fields;%>
+        <%for(var j = 0; j < fields.length ; j++) {%>
+         <%    cell = bean[fields[j].field] ; %>
+              <td>
+              <%//if(nameContainer[j]=="UIContainer0"){%>
+              <%//console.log(nameContainer[j+k]); %>
+              <div class=<%=nameContainer[j+k] %>  ></div>
+               <%//}//renderInputField(cell);%>
+           <!--<div class="UIContainer" ></div>-->
+           </td>
+        <%}%>
+        <% if(isEnd){%>
+       <td><a class="action onCollapseExpand" nodeId="<%= node.id %>" href="#"><%= collapsedSign %></a> </td>
+       <%}else{ %>
+       <td><a class="action onCollapseDelete" nodeId="<%= node.id %>" href="#"><%= '-' %></a> </td>
+       <%} %>
+  </tr>
+
+  <%if(node.isCollapsed()) return;%>
+  <%var children = node.getChildren();%>
+  <%for(var i = 0; i < children.length; i++) { %>
+  <%  renderRow(children[i], level + 1,config,"");%>
+  <%}%>
+<%}%>
+
+<%function renderBeanHeaders(config) {%>
+  <thead>
+    <tr>
+      
+      <%
+        var fields = config.bean.fields ;
+      %>
+      <%
+        for(var i = 0; i < fields.length ; i++) {
+      %>
+        <%
+          if(fields[i].toggled != null && fields[i].toggled) {
+        %>
+          <th><%=fields[i].label%></th>
+        <%
+          }
+        %>
+      <%
+        }
+      %>
+      <th></th>
+    </tr>
+  </thead>
+<%
+  }
+%>
+
+<div class="UIBeanTable">
+<table class="UITreeTableRows">
+  <%renderBeanHeaders(config); %>
+  <%var k = 0; %>
+  <%for(var i = 0; i < nodes.length; i++) { %>
+  <% var isEnd = false;
+    if(i==nodes.length-1){
+    	isEnd = true;
+    }
+  %>
+  <%  renderRow(nodes[i], 1,config, isEnd,nameContainer, k); k = k+6;%>
+  <%}%>
+</table>
+<%if(config.button){ %>
+ <div class="a" style="padding:0px 30px 0px 0px; margin: 5px ;">
+    <div style="float: right" data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <a class="reset" style="margin:0px 5px 0px 0px; ;"
+         data-role="button" data-icon="add" data-iconpos="left">Viết lại</a>
+      <a class="save"
+         data-role="button" data-icon="check" data-iconpos="left">Lưu</a>
+    </div>
+    <div style="clear: right"><span/></div>
+  </div>
+  <%} %>
+</div>

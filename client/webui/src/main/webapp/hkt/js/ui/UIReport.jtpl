@@ -1,0 +1,43 @@
+<div class="w-report" style="padding: 0px">
+  <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <a class="onReport" data-role="button" data-icon="grid">Report</a>
+    <%config.charts.forEach(function(chart) { %>
+      <a class="onDrawChart" data-role="button" chart="<%=chart.name%>"><%=chart.label%></a>
+    <%}) %>
+  </div>
+  
+  <div class="ReportSection">
+    <table>
+      <tr>
+        <th>-</th>
+        <%var headers = data.headers ; %>
+        <%for(var i = 0; i < headers.length; i++) {%>
+          <th><%=headers[i]%></th>
+        <%} %>
+      </tr>
+      <%var rows = data.rows ; %>
+      <%for(var i = 0; i < rows.length; i++) {%>
+        <tr>
+          <td><%=rows[i].name%></td>
+          <%var cells = rows[i].cells ; %>
+          <%for(var j = 0; j < cells.length; j++) {%>
+            <td><%=cells[j]%></td>
+          <%} %>
+        </tr>
+      <%} %>
+    </table>
+  </div>
+  
+  <div class='ChartSection w-chart  ui-grid-a' 
+       style="border: 3px solid; padding: 5px; display: none">
+    <div class='ui-block-a' style="width: 65%">
+      <div class="ChartContainer" style="min-height: 400px"></div>
+    </div>
+    
+    <div class='ui-block-b' style="width: 35%; padding: 10px">
+      <div id="info1" style="padding: 10px; border: 3px solid; min-height: 200px">
+        Nothing yet
+      </div>
+    </div>
+  </div>
+</div> 

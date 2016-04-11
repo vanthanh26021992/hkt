@@ -1,0 +1,64 @@
+<div style="border: 1px solid">
+  <div style="border-bottom: 1px solid; padding-left: 5px">
+    <div class="ui-grid-b">
+      <div class="ui-block-a" style="width: auto">
+        
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <a class="onSelectNode" path="" data-role="button" data-icon="home" data-iconpos="notext">Root</a>
+          <%
+              var path = [] ; 
+              if(node != null) path = node.path.split('/') ;
+              var cpath = null ;
+              for(var i = 0; i < path.length; i++)  {
+                if(cpath == null) {
+                  cpath = path[i] ;
+                } else {
+                  cpath = cpath + '/' + path[i] ; 
+                }
+          %>
+          <%    if(i < path.length - 1) { %>
+                  <a class="onSelectNode" data-role="button" path="<%=cpath%>"><%=path[i]%></a>
+          <%    } else { %>
+                  <a data-role="button"><%=path[path.length - 1]%></a>
+          <%  }%>
+          <%}%>
+        </div>
+      </div>
+      
+      <div class="ui-block-b" style="width: auto; float: right">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <a class="onNewNode" data-role="button" data-icon="plus" data-iconpos="notext">Add Node</a>
+          <a class="onEditNode" data-role="button" data-icon="edit" data-iconpos="notext">Edit node</a>
+          <a class="onNewAttribute" data-role="button" data-icon="check" data-iconpos="notext">Add Attribute</a>
+          <a data-role="button" data-icon="delete" data-iconpos="notext">Delete node</a>
+        </div>
+      </div>
+      <div style="clear: both"><span/></div>
+    </div>
+  </div>  
+  
+  <div class="layout-200-rest">
+    <div class="col-left">
+      <div>
+        [
+        <%var parentPath = '' ; %>
+        <%if(node != null && node.parentPath != null) parentPath = node.parentPath ; %>
+        <a class="onSelectNode" path="<%=parentPath%>" href="#">. .</a>
+        ]
+      </div>
+      
+      <div style="padding: 5px">
+        <%children.forEach(function(node) { %>
+          <div>
+            <a class="onSelectNode" path="<%=node.path%>" href="#"><%=node.name%></a>
+          </div>
+        <%});%>
+      </div>
+    </div>
+    
+    <div class="col-right NodeAttributes" style="border-left: 1px solid; min-height: 300px">
+    </div>
+  </div>
+
+  <div style="clear: both"><span/></div>
+</div>

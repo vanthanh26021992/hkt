@@ -1,0 +1,50 @@
+<br/>
+<div style="border: 1px solid">
+  <div style="border-bottom: 1px solid; padding-left: 5px">
+  
+    <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+      <a class="onSelectGroup" path="" data-role="button" data-icon="home" data-iconpos="notext">Phòng ban cha</a>
+      <%
+        var path ; 
+        if(group != null) 
+        	{
+        	path = group.code;   
+        	}
+      %>
+      <%  if(group != null) { %>
+            <a class="onSelectGroup" data-role="button" path="<%=path%>"><%=group.name %></a>
+      <%  } %>
+      
+      <%if(group != null) { %>
+        <a class="onEditGroup" data-role="button" data-icon="edit" data-iconpos="notext">Sửa phòng ban</a>
+        <a class="onAddMembership" data-role="button" data-icon="check" data-iconpos="notext">Thêm nhân viên</a>
+        <a class="onDeleteGroup" data-role="button" data-icon="delete" data-iconpos="notext">Xóa phòng ban</a>
+      <%}%>
+      <a class="onNewGroup" data-role="button" data-icon="plus" data-iconpos="notext">Thêm phòng ban con</a>
+      
+    </div>
+  </div>  
+  
+  <div class="layout-200-rest">
+    <div class="col-left">
+      <div>
+        [
+        <%var parentCode = '' ; %>
+        <%if(group != null && group.parentCode != null) parentCode = group.parentCode ; %>
+        <a class="onSelectGroup" path="<%=parentCode%>" href="#">. .</a>
+        ]
+        </div>
+      <%children.forEach(function(selGroup) { %>
+        <div>
+          <a class="onSelectGroup" path="<%=selGroup.code%>" href="#"><%=selGroup.name%></a>
+        </div>
+      <%});%>
+    </div>
+    
+    <div class="col-right MembershipsList"
+       style="border-left: 1px solid; min-height: 300px">
+    </div>
+    
+    <div style="clear: both"></div>
+  </div>
+</div>

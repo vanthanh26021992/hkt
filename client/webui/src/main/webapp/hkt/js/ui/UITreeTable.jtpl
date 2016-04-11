@@ -1,0 +1,133 @@
+<%function renderDfltToolbar( toolbarConfig, valueTime, nameObject, typeTime, isNew) {%>
+  <div class="UITableDefaultToolbar Toolbar">
+    <div class="ui-grid-b">
+      <div class="ui-block-a" style="width: auto">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <%
+            if(toolbarConfig.actions != null) {
+          %>
+          <%
+            var actions =  toolbarConfig.actions ;
+          %>
+          <%
+            for(var i = 0; i < actions.length; i++) {
+          %>
+                <a class="onDfltToolbarAction" data-role="button" data-icon="<%=actions[i].icon%>" 
+                   action="<%=i%>"><%=actions[i].label%></a>
+          <%
+            }
+          %>
+          <%
+            }
+          %>
+           <%if(isNew == true){%>
+            <a class="onObject"  data-role="button" >
+           	Tên đối tượng : <%=nameObject%>
+        	</a>
+            <% }%>
+             <%
+              if(typeTime=='year'){
+              typeTime = "Năm";
+              }else {
+              if(typeTime=='month'){
+              typeTime = "Tháng";
+              }else if(typeTime=='quarterly'){
+              typeTime = "Quý";
+              }
+              }
+            %>
+            <a class="typeTime"  data-role="button" >
+           	 Loại thời gian :  <%=typeTime %>
+        	</a>
+        	<a class="valueTime"  data-role="button" >
+           	Giá trị thời gian : <%=valueTime %>
+        	</a>
+        </div>
+      </div>
+    </div> 
+      
+  </div>
+<%
+  }
+%>
+
+<%
+  function renderToolbars(config, valueTime, nameObject, typeTime, isNew) {
+    if(config.toolbar == null) return ;
+    if(config.toolbar.dflt != null) {
+  renderDfltToolbar(config.toolbar.dflt, valueTime, nameObject, typeTime, isNew) ;
+    }
+  }
+%>
+
+<%function renderRow(node, level, config) {%>
+<%  var collapsedSign = node.isCollapsed() ? '+' : '-';%>
+  <tr>  
+    <!-- <td class="tree level-<%= level %>"><span class="ui-icon-alert ui-btn-icon-notext inlineIcon"></span><a class="action onCollapseExpand" nodeId="<%= node.id %>" href="#"><%= collapsedSign %></a> <%=node.name%></td> -->
+    <%var icon = "ui-icon-"+node.icon; %>
+    <%console.log(node.icon); %>
+    <%if(node.icon==null)collapsedSign=""; %>
+    <td class="tree level-<%= level %>"><span class="<%=icon%> ui-btn-icon-notext inlineIcon"></span><a 
+    class="action onCollapseExpand" nodeId="<%= node.id %>" href="#"><%= collapsedSign %></a> <%=node.name%></td>
+        <%
+          var bean = node.bean ;
+        %>
+        <%var fields = config.bean.fields;%>
+        <%for(var j = 0; j < fields.length ; j++) {%>
+        <%  cell = bean[fields[j].field] ; %>
+        <%  if(fields[j].onClick != null) {%>
+              <td>
+                <a href="" class="onBeanFieldClick ui-internal-link" field="<%=j%>"><%=cell%></a>
+              </td>
+        <%  } else { %>
+              <td><%=cell%></td>
+        <%  }%>
+        <%}%>
+  </tr>
+
+  <%if(node.isCollapsed()) return;%>
+  <%var children = node.getChildren();%>
+  <%for(var i = 0; i < children.length; i++) { %>
+  <%  renderRow(children[i], level + 1,config);%>
+  <%}%>
+<%}%>
+
+<%function renderBeanHeaders(config) {%>
+  <thead>
+    <tr>
+      <th>#</th>
+      <%
+        var fields = config.bean.fields ;
+      %>
+      <%
+        for(var i = 0; i < fields.length ; i++) {
+      %>
+        <%
+          if(fields[i].toggled != null && fields[i].toggled) {
+        %>
+          <th><%=fields[i].label%></th>
+        <%
+          }
+        %>
+      <%
+        }
+      %>
+    </tr>
+  </thead>
+<%
+  }
+%>
+
+<div class="UITreeTable">
+    <div class="UITableToolbars ui-grid-a">
+    <div class="ui-block-a" style="width: 96.5%">
+      <%renderToolbars(config, valueTime, nameObject, typeTime, isNew) %>
+    </div>
+<table class="UITreeTableRows">
+  <%renderBeanHeaders(config); %>
+  <%for(var i = 0; i < nodes.length; i++) { %>
+  <%  renderRow(nodes[i], 1,config);%>
+  <%}%>
+</table>
+</div>
+</div>

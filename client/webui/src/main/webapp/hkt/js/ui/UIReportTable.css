@@ -1,0 +1,41 @@
+.UIReportTable table {
+  width: 99%;
+  border-collapse:collapse;
+  margin: 0px auto;
+}
+
+.UIReportTable th {
+	border: none ;
+	border-top:    2px solid ;
+  border-bottom: 2px solid ;
+  text-align: left;
+  padding: 5px;
+}
+
+.UIReportTable td {
+  border:  none ;
+  padding: 5px;
+}
+
+
+.UIReportTable .hide-column {
+  display: none ;
+}
+
+
+.UIReportTable .cell-center-align {
+  text-align: center ;
+}
+
+.UIReportTable .cell-right-align {
+  text-align: right ;
+}
+
+.UIReportTable .cell-left-align {
+  text-align: left ;
+}
+
+.UIReportTable .action-icon {
+  margin: 0px ;
+  padding: 0px ;
+}

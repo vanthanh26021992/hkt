@@ -1,0 +1,27 @@
+<div>
+  <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <span class="onMyDashboard" data-role="button" data-icon="grid">Dashboar</span>
+    <span class="onMyProfile" data-role="button" data-icon="back">My Profile</span>
+    <span class="onMyProfile ui-disabled" data-role="button" data-icon="back">Preferences</span>
+  </div>
+  
+  <hr/>
+  
+  <div class="ui-grid-a">
+    <div class="ui-block-a">
+      <div class="ui-bar ui-bar-e" style="height:200px">Organization</div>
+    </div>
+    
+    <div class="ui-block-b">
+      <div class="ui-bar ui-bar-e" style="height:200px">Human Resources</div>
+    </div>
+    
+    <div class="ui-block-a">
+      <div class="ui-bar ui-bar-e" style="height:200px">Warehouse</div>
+    </div>
+    
+    <div class="ui-block-b">
+      <div class="ui-bar ui-bar-e" style="height:200px">Server</div>
+    </div>
+  </div><!-- /grid-a -->
+</div>

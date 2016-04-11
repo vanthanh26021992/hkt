@@ -1,0 +1,40 @@
+<div style="border: 1px solid red">
+  <div class="ui-btn-left" data-role="controlgroup" data-type="horizontal">
+    <a href="javascript:toggleNav()" data-role="button" data-icon="bars">Menu</a>
+    <a href="#" data-role="button" data-icon="back">Back</a>
+  </div>
+</div>
+
+<div style="border: 1px solid red">
+  <label for="slider">Slider:</label>
+  <input type="range" name="slider" id="slider" value="50" min="0" max="100">
+</div>
+
+<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+  <legend>Checkboxes, mini, horizontal controlgroup:</legend>
+  <input type="checkbox" name="checkbox-6" id="checkbox-6">
+  <label for="checkbox-6">b</label>
+  <input type="checkbox" name="checkbox-7" id="checkbox-7" checked="">
+  <label for="checkbox-7"><em>i</em></label>
+  <input type="checkbox" name="checkbox-8" id="checkbox-8">
+  <label for="checkbox-8">u</label>
+</fieldset>
+
+<label for="text-basic">Text input:</label>
+<input type="text" name="text-basic" id="text-basic" value="">
+
+
+<label for="textarea">Textarea:</label>
+<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+
+<h1>Panels</h1>
+<h2>Fixed positioning</h2>
+<p>This is a typical page that has two buttons in the header bar that open panels. The left panel has the reveal display mode. The right panel opens as overlay. For both panels we set <code>data-position-fixed="true"</code>. We also set position fixed for the header and footer on this page.</p>
+<h2>Responsive</h2>
+<p>To make this responsive, you can make the page re-flow at wider widths. This allows both the reveal panel menu and page to be used together when more space is available. This behavior is controlled by CSS media queries. You can create a custom one for a specific breakpoint or use the breakpoint preset by adding the <code>class="ui-responsive-panel"</code> to the page container. We have added this class on this demo page.</p>
+
+<a href="./" class="jqm-button" data-ajax="false" data-role="button" data-mini="true" data-inline="true" data-icon="arrow-l" data-iconpos="left">Back to Panels</a>
+
+<div data-demo-html="#panel-fixed-page1" data-demo-css="true"></div><!--/demo-html -->
+
+

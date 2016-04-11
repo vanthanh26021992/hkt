@@ -1,0 +1,59 @@
+<%function renderBeanHeaders(dialogLabel) {%>
+  <thead>
+    <tr>
+      <th>#</th>
+      <%
+        var fields = dialogLabel ;
+      %>
+      <%
+        for(var i = 0; i < fields.length ; i++) {
+      %>
+          <th><%=fields[i].label%></th>
+
+      <%
+        }
+      %>
+    </tr>
+  </thead>
+<%
+  }
+%>
+
+<%function renderBeanRows( state, pageList, dialogLabel) { %>
+  <tbody>
+    <%var from = pageList.getFrom();%>
+    <%var fields = dialogLabel;%>
+    <%var rows = pageList.currentPageItems();%>
+    <%for(var i = 0; i < rows.length ; i++) {%>
+      <tr row="<%=i%>">
+        <%
+          var bean = rows[i].bean ;
+          var statusClass = "ui-origin-text" ;
+        %>
+        <td>
+          <span class="<%=statusClass%>"><%=(from + i + 1)%></span>
+        </td>
+        <%for(var j = 0; j < fields.length ; j++) {%>
+        <%  var cell = null ; %>
+        <%  if(fields[j].custom != null) {%>
+        <%    cell =  fields[j].custom.getDisplay(bean) ;%>
+        <%  } else {%>
+        <%    cell = bean[fields[j].field] ; %>
+        <%  }%>
+           <td>
+         <%=cell%>
+           </td>
+        <%}%>
+      </tr>
+    <%}%>
+  </tbody>
+<%
+  }
+%>
+
+<div>
+  <table>
+    <%renderBeanHeaders(dialogLabel); %>
+    <%renderBeanRows(state, pageList, dialogLabel); %>
+  </table>
+</div>

@@ -1,0 +1,21 @@
+{
+  "account": "Tổ chức Nhân sự",
+  "account.Accounts": "Nhân sự",
+  "account.Groups":   "Cây Phòng ban & Nhân sự",
+  "account.ListGroup": "Phòng ban",
+	
+  "setting": "Cấu hình",
+  "setting.Cities": "Thành phố",
+  "setting.contentMenu": "Test menu",
+  "cms": "CMS",
+  "cms.Explorer": "Explorer",
+  "cms.Templates": "Templates",
+
+  "admin": "Hệ Thống",
+  "admin.Configs": "Thông tin cơ bản",
+  "admin.Monitors": "Hệ Thống",
+  
+  "test": "Test",
+  "test.Tests": "Test",
+  "test.Samples": "Samples"
+}

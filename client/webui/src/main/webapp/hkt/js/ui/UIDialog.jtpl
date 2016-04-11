@@ -1,0 +1,11 @@
+ <h3 class="canhbao" style="border-bottom: 1px solid; margin: 0px""> Thông báo</h3>
+ <div class="UIBeansTab" style="padding: 5px 0px"></div>
+ <form> 
+ <div>
+ <label for="personName"><%=str%> </label>
+ </div>
+ <div style="float: right; margin-right: 40px">
+ <input class="addPersonButton ui-link ui-btn ui-icon-back ui-shadow ui-corner-all ui-last-child" type="submit" value="Thoát" />
+<!--  <a class="addPersonButton ui-link ui-btn ui-icon-back ui-btn-icon-left ui-shadow ui-corner-all ui-last-child" action="cancel" data-role="button" data-icon="back" role="button">Thoát</a> -->
+ </div>
+</form>

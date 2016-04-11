@@ -1,0 +1,24 @@
+{
+  "coupons": [
+    { 
+    "name": "coupon summer", "code": "2001112", 
+    "fromDate": "01/4/2013 09:00:00 GMT+0700", "toDate": "01/8/2013 09:00:00 GMT+0700",
+    "discount": 1000000, "currencyUnit": "VND", "discountRate": 10, "maxUsePerCustomer": 5, "description": "description"
+    },
+    { 
+    "name": "coupon autumn", "code": "020404", 
+    "fromDate": "01/8/2013 09:00:00 GMT+0700", "toDate": "01/11/2013 09:00:00 GMT+0700",
+    "discount": 500000, "currencyUnit": "VND", "discountRate": 5, "maxUsePerCustomer": 5, "description": "description"
+    },
+    { 
+    "name": "coupon winter", "code": "782424", 
+    "fromDate": "01/11/2013 09:00:00 GMT+0700", "toDate": "01/12/2013 09:00:00 GMT+0700",
+    "discount": 1500000, "currencyUnit": "VND", "discountRate": 15, "maxUsePerCustomer": 5, "description": "description"
+    },
+    { 
+    "name": "coupon spring", "code": "045245", 
+    "fromDate": "01/1/2013 09:00:00 GMT+0700", "toDate": "01/3/2013 09:00:00 GMT+0700",
+    "discount": 2000000, "currencyUnit": "VND", "discountRate": 20, "maxUsePerCustomer": 5, "description": "description"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+<div>
+  <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <%for(var i = 0; i < config.tabs.length; i++) { %>
+    <%  var tab = config.tabs[i]; %>
+    <%  var icon = tab.icon ? tab.icon : 'grid' ; %>  
+    <%  var disable = tab.name == state.tabConfig.name ? ' ui-disabled' : '' ; %>
+        <a class="onSelectTab<%=disable%>" tab="<%=tab.name%>" data-role="button" data-icon="<%=icon%>">
+          <%=tab.label%>
+        </a>
+    <%}%>
+  </div>
+  <div class="UITableToolbars ui-grid-a">
+   <div class="ui-block-a" style="width: 96.5%">
+      <div class="UITableDefaultToolbar Toolbar">
+  <div class="ui-grid-b">
+      <div class="ui-block-a" style="width: auto">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <a class="onToggleColumnSelector" data-role="button" data-icon="grid" 
+             data-iconpos="notext">Columns</a>
+          <%
+            if(toolbarConfig.actions != null) {
+          %>
+          <%
+            var actions =  toolbarConfig.actions ;
+          %>
+          <%
+            for(var i = 0; i < actions.length; i++) {
+          %>
+                <a class="onDfltToolbarAction" data-role="button" data-icon="<%=actions[i].icon%>" 
+                   action="<%=i%>"><%=actions[i].label%></a>
+          <%
+            }
+          %>
+          <%
+            }
+          %>
+        </div>
+      </div>
+      
+    </div>
+    <div class="ColumnSelector">
+      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+            <input id="nameObject<%=tableId%>" class="onToggleColumn" 
+                   type="checkbox" name="nameObject" value="true"/>
+
+            <label for="nameObject<%=tableId%>">
+              Tên đối tượng : <%=nameObject %>
+            </label> 
+            <input id="typeTime<%=tableId%>" class="onToggleColumn" 
+                   type="checkbox" name="typeTime" value="true"/>
+            <%
+              if(typeTime=='year'){
+              typeTime = "Năm";
+              }else {
+              if(typeTime=='month'){
+              typeTime = "Tháng";
+              }else if(typeTime=='quarterly'){
+              typeTime = "Quý";
+              }
+              }
+            %>
+            <label for="typeTime<%=tableId%>">
+              Loại thời gian : <%=typeTime %>
+            </label> 
+                        <input id="valueTime<%=tableId%>" class="onToggleColumn" 
+                   type="checkbox" name="valueTime" value="true"/>
+
+            <label for="valueTime<%=tableId%>">
+              Giá trị thời gian : <%=valueTime %>
+            </label> 
+      </fieldset>
+    </div>
+    
+  </div>
+    </div>
+  </div>
+  
+  <div class="UITab">
+    <div class='ChartSection w-chart  ui-grid-a' 
+      style="border: 3px solid; padding: 5px; display: none">
+      <div class='ui-block-a' style="width: 65%">
+        <div class="UIContainer" style="min-height: 400px"></div>
+      </div>
+      
+      <div class='ui-block-b' style="width: 35%; padding: 10px">
+        <div id="info1" style="padding: 10px; border: 3px solid; min-height: 200px">
+          <div class='my-legend'>
+              <div class='legend-scale'>
+                <ul class='legend-labels'>
+                 <%for(var i = 0; i < dataView.length; i++) {%>
+                 <% console.log(dataView[i].label);%>
+                  <li><span style='background:<%=dataView[i].color%>;'></span><%=dataView[i].label%></li>
+                <%}%>
+               </ul>
+            </div>
+         </div>
+       </div>
+    </div>
+     
+  </div>
+  </div>
+</div>

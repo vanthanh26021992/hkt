@@ -1,0 +1,109 @@
+{
+  "nodes": [
+    { 
+      "node": {
+        "path": "home", "name": "home", "mimeType": "sys/folder"
+      }
+    },
+  
+    {
+      "node": {
+        "path": "home/thang", "name": "thang", "mimeType": "sys/folder"
+      }
+    },
+  
+    {
+      "node": {
+        "path": "home/thang/avatar.png", "name": "avatar.png", "mimeType": "image/png"
+      },
+      
+      "attributes": {
+        "description": { 
+          "type": "String", "value": "Hinh dai dien avatar"
+        },
+        
+        "path": { 
+          "type": "Ref", "value": "path/to/file"
+        }
+      }
+    },
+  
+    {
+      "node": {
+        "path": "employees", "name": "employees", "mimeType": "sys/folder"
+      }
+    },
+  
+    {
+      "node": {
+        "path": "employees/contracts", "name": "contracts", "mimeType": "sys/folder"
+      }
+    },
+  
+    {
+      "node": {
+        "path": "employees/contracts/thang", "name": "thang", "mimeType": "sys/folder"
+      }
+    },
+  
+    {
+      "node": {
+        "path": "employees/contracts/thang/hopdonglamviec.doc", "name": "hopdonglamviec.doc",
+        "mimeType": "ms/doc"
+      }, 
+      "attributes": {
+        "description": { 
+          "type": "String", "value": "Hop dong lam viec giua Thang va HKT"
+        },
+        "path": { 
+          "type": "Ref", "value": "path/to/file"
+        }
+      }
+    },
+  
+    {
+      "node": {
+        "path": "products", "name": "products", "mimeType": "sys/folder"
+      }
+    },
+  
+    {
+      "node": {
+        "path": "products/iphone5s", "name": "iphone5s", "mimeType": "sys/folder"
+      }
+    },
+  
+    {
+      "node": {
+        "path": "products/iphone5s/spec.pdf",
+        "name": "spec.pdf",
+        "mimeType": "binary/pdf"
+      },
+      "attributes": {
+        "description": { 
+          "type": "String", "value": "product description"
+        },
+        "product:screen:resolution": { 
+          "type": "String", "value": "1280x800"
+        },
+        "product:screen:size": { 
+          "type": "String", "value": "13.1"
+        },
+        "product:battery:capacity": { 
+          "type": "String", "value": "6000mAh"
+        },
+        
+        "attachment1": { 
+          "type": "Attachment", "value": "path/name"
+        },
+        "attachment2": { 
+          "type": "Attachment", "value": "path/name"
+        },
+        
+        "warehouse:Product": { 
+          "type": "EntityRef", "value": "01"
+        }
+      }
+    }
+  ]
+}

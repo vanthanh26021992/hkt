@@ -1,0 +1,47 @@
+.UIBeanTable {
+}
+
+.UIBeanTable table {
+  width: 99%;
+  border-collapse:collapse;
+  margin: 0px auto;
+}
+
+.UIBeanTable td {
+  border: 0px solid ;
+  padding:0px 0px 0px 2px;
+}
+
+.UIBeanTable th{
+  border: 0px solid ;
+  padding:0px 0px 0px 2px;
+  text-align: center ;
+}
+
+.UIBeanTable .tree {
+  border: none ;
+  border-left: 0px solid ;
+  padding: 0px;
+}
+
+.UIBeanTable .hide-column {
+  display: none ;
+}
+
+
+.UIBeanTable .cell-center-align {
+	text-align: center ;
+}
+
+.UIBeanTable .cell-right-align {
+  text-align: right ;
+}
+
+.UIBeanTable .action {
+  text-decoration: none;
+}
+
+.UIBeanTable .action-icon {
+  margin: 0px ;
+  padding: 0px ;
+}

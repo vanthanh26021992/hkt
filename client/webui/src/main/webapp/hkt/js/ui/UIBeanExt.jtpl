@@ -1,0 +1,71 @@
+<%function renderInputField(field, bean) { %>
+			<%
+			 var disabled = "" ;
+      if(field.disable)  disabled = 'disabled="disabled"';
+			%>
+     <input class="onChangeInput" type="text" name="<%=field.field%>" 
+     value="<%=bean[field.field]%>" data-mini="true" <%=disabled%>/>
+<%}%>
+
+
+<%function renderCustomField(field, bean) { %>
+<%
+			 var disabled = "" ;
+      if(field.disable)  disabled = 'disabled="disabled"';
+			%>
+  <div class="UIBeanCustomInput">
+    <%var inputVal = field.custom.getDisplay(bean); %>
+    <input class="onBlurCustomInput onChangeCustomInput onSelectSearch" 
+           type="search" name="<%=field.field%>" 
+           value="<%=inputVal%>" data-mini="true"  <%=disabled%> autocomplete="off"/>
+    <div class="UIBeanCustomInputSelector"></div>
+  </div>
+<%}%>
+
+<%function renderSelectInputField(field, bean) { %>
+<%
+			 var disabled = "" ;
+      if(field.disable)  disabled = 'disabled="disabled"';
+			%>
+  <select class="onChangeInput" name="<%=field.field%>" data-mini="true" <%=disabled%>>
+     <%var options = field.select.getOptions(field, bean) ; %>
+     <%for(var i = 0; i < options.length ; i++) { %>
+     <% var fieldValue = bean[field.field] ; %>
+       <% fieldValue = fieldValue != null ? fieldValue : field.defaultValue ; %>
+     <% var selected = fieldValue == options[i].value ? 'selected' : '' ; %>
+         <option value='<%=options[i].value%>' <%=selected%>>
+           <%=options[i].label%>
+         </option>
+     <%}%>
+   </select>
+<%}%>
+
+<%function renderEditable(beanConfig, beanState) { %>
+<%  var bean = beanState.bean;
+	var search = beanState.search;%>
+          <%beanConfig.fields.forEach(function(field) { %>
+              <%
+                if(field.select != null) {
+                  renderSelectInputField(field, bean);
+               } else if(field.custom != null)  {
+                		renderCustomField(field, bean);
+                } else {
+                  renderInputField(field, bean);
+                }
+              %>
+              <%if(beanState.fieldErrors != null) { %>
+              <%  var errors = beanState.fieldErrors ;%>
+              <%  if(errors[field.field] != null) {%>
+                  <span class="ui-error-text"><%=errors[field.field]%></span>
+              <%  }%>
+              <%}%>
+          <%});%>
+<%}%>
+
+  <div>
+  <%for(var name in beanStates) { %>
+  <div bean="<%=name%>">
+  <%  renderEditable(config.beans[name], beanStates[name]) ; %>
+  </div>
+ <%}%>
+  </div>

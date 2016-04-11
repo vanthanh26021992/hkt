@@ -1,0 +1,150 @@
+<%function renderBeanHeaders(config) {%>
+  <thead>
+    <tr>
+      <th>#</th>
+      <%
+        var fields = config.bean.fields ;
+      %>
+      <%
+        var actions = config.bean.actions ;
+      %>
+      <%
+        for(var i = 0; i < fields.length ; i++) {
+      %>
+        <%
+          if(fields[i].toggled != null && fields[i].toggled) {
+        %>
+          <th><%=fields[i].label%></th>
+        <%
+          }
+        %>
+      <%
+        }
+      %>
+      <%
+        if(actions != null) {
+      %>
+          <th>Actions</th>
+      <%
+        }
+      %>
+    </tr>
+  </thead>
+<%
+  }
+%>
+
+<%function renderBeanRows(config, state, pageList, total) { %>
+  <tbody>
+    <%var from = pageList.getFrom();%>
+    <%var fields = config.bean.fields;%>
+    <%var actions = config.bean.actions;%>
+    <%var rows = pageList.currentPageItems();%>
+    <%for(var i = 0; i < rows.length ; i++) {%>
+      <tr row="<%=i%>">
+        <%
+          var bean = rows[i].bean ;
+          var statusClass = "ui-origin-text" ;
+        %>
+        <td>
+          <span class="<%=statusClass%>"><%=(from + i + 1)%></span>
+        </td>
+        <%for(var j = 0; j < fields.length ; j++) {%>
+        <%  if(fields[j].toggled == null || !fields[j].toggled) continue ;%>
+        <%  var cell = null ; %>
+        <%  if(fields[j].custom != null) {%>
+        <%    cell =  fields[j].custom.getDisplay(bean) ;%>
+        <%  } else {%>
+        <%    cell = bean[fields[j].field] ; %>
+        <%  }%>
+        <%  if(fields[j].onClick != null) {%>
+              <td>
+                <a href="" class="onBeanFieldClick ui-internal-link" field="<%=j%>"><%=cell%></a>
+              </td>
+        <%  } else { %>
+              <td><%=cell%></td>
+        <%  }%>
+        <%}%>
+        <%if(actions != null) {%>
+          <td class="cell-center-align" style="padding: 3px 0px">
+		        <%for(var k = 0; k < actions.length; k++) {%>
+		        <%  var action = actions[k] ;%>
+		            <a class="onBeanAction" action="<%=k%>"
+		               style="padding: 0px; margin: 0px" 
+		               data-role="button" data-icon="<%=action.icon%>" 
+		               data-iconpos="notext" data-inline="true"><%=action.label%></a>
+		        <%}%>
+          </td>
+        <%}%>
+      </tr>
+    <%}%>
+    <tr>
+      <td colspan="100">
+        <span>Tong: <%=total%></span>
+        <%
+          if(state.newCount > 0) {
+        %>
+          | <span class='ui-new-text'>New: <%=state.newCount%></span>
+        <%
+          }
+        %>
+        <%
+          if(state.modifiedCount > 0) {
+        %>
+          | <span class='ui-modified-text'>Modified: <%=state.modifiedCount%></span>
+        <%
+          }
+        %>
+        <%
+          if(state.deletedCount > 0) {
+        %>
+          | <span class='ui-deleted-text'>Deleted: <%=state.deletedCount%></span>
+        <%
+          }
+        %> 
+      </td>
+    </tr>
+  </tbody>
+<%
+  }
+%>
+
+<%
+  function renderPageIterator(config, pageList) {
+%>
+  <div class="UITreeTablePageIterator">
+    <div style="float: right" data-role="controlgroup" data-mini="true" data-type="horizontal">
+      <a class="onSelectPage" page="<%=pageList.getPrevPage()%>" 
+         data-role="button" data-icon="arrow-l" data-iconpos="left">Prev</a>
+      <%var cpage = pageList.getCurrentPage(); %>
+      <%var range = pageList.getSubRange(cpage, 10); %>
+      <%if(range[0] > 1) {%>
+        <a class="onSelectPage" page="1" data-role="button">First</a>
+        <a class="ui-disabled" data-role="button">..</a>
+      <%}%>
+      <%for(var i = range[0]; i <= range[1] ; i++) { %>
+        <%if(i == cpage) {%>
+          <a class="ui-disabled onSelectPage" page="<%=i%>" data-role="button"><%=i%></a>
+        <%} else {%>
+          <a class="onSelectPage" page="<%=i%>" data-role="button"><%=i%></a>
+        <%} %>
+      <%} %>
+      <%var lastPage =  pageList.getAvailablePage()%>
+      <%if(range[1] < lastPage) {%>
+        <a class="ui-disabled" data-role="button">..</a>
+        <a class="onSelectPage" page="<%=lastPage%>" data-role="button">Last</a>
+      <%}%>
+      <a class="onSelectPage" page="<%=pageList.getNextPage()%>" 
+         data-role="button" data-icon="arrow-r" data-iconpos="right">Next</a>
+    </div>
+    <div style="clear: right"><span/></div>
+  </div>
+<%}%>
+
+<div>
+  <table>
+    <%renderBeanHeaders(config); %>
+    <%renderBeanRows(config, state, pageList, total); %>
+  </table>
+  <%renderPageIterator(config, pageList);%>
+</div>

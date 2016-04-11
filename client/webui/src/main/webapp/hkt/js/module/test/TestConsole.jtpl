@@ -1,0 +1,69 @@
+<div style="margin-top: 20px; border-bottom: 1px solid">
+  <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <a class="onCleanDBSuite" data-role="button" data-icon="arrow-l">Clean DB</a>
+  </div>
+</div>
+
+<div class="ui-grid-b" style="padding: 20px 5px">
+  <div class="ui-block-a" style="width: 100px">
+    <h4 style="margin-top: 10px">Scenario: </h4>
+  </div>
+  <div class="ui-block-b" style="width: 200px">
+    <select class="SelectScenario" data-mini="true">
+      <option value="default">Default</option>
+      <option value="hkt">Hkt</option>
+      <option value="nhahangmuoiot">Nha Hang Muoi Ot</option>
+    </select>
+  </div>
+  <div class="ui-block-c" data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <a class="onRunScenario" data-role="button" data-icon="gear" data-iconpos="left">Run</a>
+  </div>
+</div>
+
+<div class="ui-grid-b" style="padding: 0px 5px">
+  <div class="ui-block-a" style="width: 100px">
+    <h4 style="margin-top: 10px">Service API:</h4>
+  </div>
+  <div class="ui-block-b" style="width: 200px">
+    <select class="SelectServiceAPI" data-mini="true">
+      <option value="all">All</option>
+      <%for(var key in Suites.modules) {%>
+        <option value="<%=key%>"><%=key%></option>
+      <%} %>
+    </select>
+  </div>
+  <div class="ui-block-c" data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <a class="onRunServiceAPISuite" data-role="button" data-icon="gear">Run</a>
+  </div>
+</div>
+
+<div class="ui-grid-b" style="padding: 0px 5px">
+  <div class="ui-block-a" style="width: 100px">
+    <h4 style="margin-top: 10px">Animate UI:</h4>
+  </div>
+  
+  <div class="ui-block-b" style="width: 200px">
+    <select class="SelectUISuite" data-mini="true">
+      <option value="all/all">All</option>
+      <%for(var mName in Suites.modules) {%>
+      <%  var module = Suites.modules[mName]; %>
+          <optgroup label="<%=mName%>">
+            <option value="<%=mName%>/all"><%=mName%> :: All</option>
+      <%    for(var sName in module.UI) {%>
+              <option value="<%=mName%>/<%=sName%>"><%=mName%> :: <%=sName%></option>
+      <%    }%>
+          </optgroup>
+      <%} %>
+    </select>
+  </div>
+  
+  <div style="width: 215px" class="ui-block-c" data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <a class="onFastAnimateUISuite" data-role="button" data-icon="gear">Fast</a>
+    <a class="onSlowAnimateUISuite" data-role="button" data-icon="gear">Slow</a>
+  </div>
+</div>
+
+<hr/>
+
+<div class="TestSuiteTable">
+</div>

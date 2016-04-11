@@ -1,0 +1,19 @@
+.UIBeanCustomInputSelector {
+  position: absolute; 
+  padding: 5px 0px;
+  background: black; 
+  z-index: 999; /* chồng lên nhau trong thẻ div, tránh gây xung đột với  các trường khác có sự kiện mouse*/
+  display: none;
+}
+
+.UIBeanCustomInputSelector h4 {
+  margin: 0px ;
+  padding: 2px 5px;
+  border-bottom: 1px solid ;
+}
+
+.UIBeanCustomInputSelector a {
+	display: block ;
+	padding: 2px 5px;
+	font-weight: bold ;
+}

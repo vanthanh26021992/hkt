@@ -1,0 +1,663 @@
+{
+  "groups": [
+    {
+      "name": "hkt",
+      "path": "hkt",
+      "description": "root group for hkt organization"
+    },
+    {
+      "name": "employees",
+      "path": "hkt/employees",
+      "description": "hkt employees group"
+    },
+    {
+      "name": "leader",
+      "path": "hkt/employees/leader",
+      "description": "leader is a subGroup hkt/employees/(Ban Lãnh Đạo)"
+    },
+    {
+      "name": "hr",
+      "path": "hkt/employees/hr",
+      "description": "hr is a subGroup hkt/employees/"
+    },
+    {
+      "name": "warehouse",
+      "path": "hkt/employees/warehouse",
+      "description": "warehouse is a subGroup hkt/employees/"
+    },
+    {
+      "name": "salse",
+      "path": "hkt/employees/salse",
+      "description": "salse is a subGroup hkt/employees/"
+    },
+    {
+      "name": "it", 
+      "path": "hkt/employees/it",
+      "description": "it is a subGroup hkt/employees/" 
+    },
+    {
+      "name": "partner",
+      "path": "hkt/partner", 
+      "description": "root group for the partner organization"
+    },
+    {
+      "name": "customer",
+      "path": "hkt/partner/customer",
+      "description": "customer is a subGroup hkt/partner/customer"
+    },
+    {
+      "name": "supplier",
+      "path": "hkt/partner/supplier",
+      "description": "supplier is a subGroup hkt/partner/supplier"
+    },
+    {
+      "name": "webui",
+      "path": "hkt/webui",
+      "description": "root webui"
+    },
+    {
+      "name": "account",
+      "path": "hkt/webui/account",
+      "description": "account is subGroup webui"
+    },
+    {
+      "name": "Accounts",
+      "path": "hkt/webui/account/Accounts",
+      "description": "Accounts is subGroup account"
+    },
+    {
+      "name": "Groups",
+      "path": "hkt/webui/account/Groups",
+      "description": "webui Groups screen access"
+    },
+    {
+      "name": "accounting",
+      "path": "hkt/webui/accounting",
+      "description": "accounting subGroup webui"
+    }
+  ],
+  
+  "accounts": [
+    {
+      "account": {
+        "loginId": "school.thuy.teacher", "password": "tu",
+        "email": "thuy.teacher@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Thuy",
+            "lastName" : "Nguyen Thi",
+            "gender" : "female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.ngoc.teacher", "password": "tu",
+        "email": "ngoc.teacher@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Ngoc",
+            "lastName" : "Nguyen Hong",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.long.teacher", "password": "tu",
+        "email": "long.teacher@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Long",
+            "lastName" : "Nguyen",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.huonganh.teacher", "password": "tu",
+        "email": "huonganh.teacher@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Huong Anh",
+            "lastName" : "Nguyen",
+            "gender" : "female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.minh.teacher", "password": "tu",
+        "email": "minh.teacher@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Minh",
+            "lastName" : "Nguyen Huu",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.dung.student", "password": "tu",
+        "email": "dung.student@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Dung",
+            "lastName" : "Nguyen Thi",
+            "gender" : "female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.ngoc.student", "password": "tu",
+        "email": "ngoc.student@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Ngoc",
+            "lastName" : "Nguyen Duc",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.thang.student", "password": "tu",
+        "email": "thang.student@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Thang",
+            "lastName" : "Nguyen Van",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.thuy.student", "password": "tu",
+        "email": "thuy.student@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Thuy",
+            "lastName" : "Tran Van",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.long.student", "password": "tu",
+        "email": "long.student@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Long",
+            "lastName" : "Tran Van",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.minh.student", "password": "tu",
+        "email": "minh.student@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Minh",
+            "lastName" : "Tran Van",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "school.manh.student", "password": "tu",
+        "email": "manh.student@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Manh",
+            "lastName" : "Tran Van",
+            "gender" : "male",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "tu", "password": "tu",
+        "email": "tu@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Tu",
+            "lastName" : "Phan",
+            "gender" : "Male/Female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+       "account": {
+        "loginId": "tranAnh", "password": "tranAnh",
+        "email": "tranAnh@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "tranAnh",
+            "lastName" : "tranAnh",
+            "gender" : "",
+            "birthday" : "",
+            "avatar" : "",
+            "height": "",
+            "weight": "",
+            "personalId" : "",
+            "maritalStatus" : "",
+            "hobby" : ""
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "digitech", "password": "digitech",
+        "email": "digitech@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "digitech",
+            "lastName" : "digitech",
+            "gender" : "",
+            "birthday" : "",
+            "avatar" : "",
+            "height": "",
+            "weight": "",
+            "personalId" : "",
+            "maritalStatus" : "",
+            "hobby" : ""
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "muoiot", "password": "muoiot",
+        "email": "muoiot@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "muoiot",
+            "lastName" : "muoiot",
+            "gender" : "",
+            "birthday" : "",
+            "avatar" : "",
+            "height": "",
+            "weight": "",
+            "personalId" : "",
+            "maritalStatus" : "",
+            "hobby" : ""
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "123zzo", "password": "123zzo",
+        "email": "123zzo@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "123zzo",
+            "lastName" : "123zzo",
+            "gender" : "",
+            "birthday" : "",
+            "avatar" : "",
+            "height": "",
+            "weight": "",
+            "personalId" : "",
+            "maritalStatus" : "",
+            "hobby" : ""
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "tuan", "password": "tuan",
+        "email": "tuan@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Tuan",
+            "lastName" : "Nguyen",
+            "gender" : "Male/Female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "long", "password": "long",
+        "email": "long@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Long",
+            "lastName" : "Nguyen",
+            "gender" : "Male/Female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "thang", "password": "thang",
+        "email": "thang@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Thang",
+            "lastName" : "Pham",
+            "gender" : "Male/Female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    {
+      "account": {
+        "loginId": "minh", "password": "minh",
+        "email": "minh@hkt.com",
+        "type": "USER",
+        "profiles": {
+          "basic": {
+            "firstName" : "Minh",
+            "lastName" : "Nguyen",
+            "gender" : "Male/Female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          }
+        }
+      }
+    },
+    
+    {
+      "account": {
+        "loginId": "hkt",
+        "password": "hkt",
+        "email": "HktConsultant@yahoo.com.vn",
+        "type": "ORGANIZATION",
+        
+        "profiles": {
+          "basic": {
+            "name": "HKT Consultant",
+            "fullName": "Công ty CP TƯ VẤN QUẢN TRỊ HKT",
+            "organizationType": "cong ty co phan",
+            "slogan": "Học Thức - Kinh Nghiệm - Thành Công",
+            "logoURL": "",
+            "foundedDate": "3/26/2011",
+            "terminatedDate": "",
+            "representative": "Phạm Văn Kiệm",
+            "registrationCode": "123456789",
+            "description": "cong ty kinh doanh 2 linh vuc, phan mem va dich thuat"
+          },
+          
+          "businessRegistrations": [
+            {
+              "#": 1,
+              "registrationCode": "123456789",
+              "taxRegistrationNumber": "123456789",
+              "fullName.vn": "Ten tieng Viet day du",
+              "fullName.en": "Ten tieng Anh day du",
+              "representative": "Phạm Văn Kiệm",
+              "charterCapital": 3000000000,
+              "legalCapital": 1000000000,
+              "domain": "phan mem, dich thuat ..."
+            },
+          
+            {
+              "#": 1,
+              "registrationCode": "123456789",
+              "taxRegistrationNumber": "123456789",
+              "fullName.vn": "Ten tieng Viet day du",
+              "fullName.en": "Ten tieng Anh day du",
+              "representative": "Phạm Văn Kiệm",
+              "charterCapital": 3000000000,
+              "legalCapital": 1000000000,
+              "domain": "phan mem, dich thuat ..."
+            }
+          ]
+        },
+        
+        "contacts": [
+          {
+            "addressNumber": "D1T9, tầng 9, Tòa nhà  TopCare, 335 Cầu Giấy",
+            "street": "Cầu Giấy",
+            "city": "Hà  Nội",
+            "country": "Việt Nam",
+            "phone": [ "0437925191" ],
+            "fax": [ "0437925193" ],
+            "email": ["HktConsultant@yahoo.com.vn"],
+            "website": ["hktconsultant.com"]
+          }
+        ]
+      },
+      
+      "memberships": [
+        { "loginId": "admin", "groupPath": "hkt", "capability": "ADMIN" },
+        { "loginId": "admin", "groupPath": "hkt/employees", "capability": "ADMIN" },
+        { "loginId": "admin", "groupPath": "hkt/employees/leader", "capability": "ADMIN" }
+      ]
+    },
+    
+    {
+      "account": {
+        "loginId": "tu.phan",
+        "password": "tu",
+        "email": "tu.phan@hktconsultant.com",
+        "type": "USER",
+        
+        "profiles": {
+          "basic": {
+            "firstName" : "Admin",
+            "lastName" : "System",
+            "gender" : "Male/Female",
+            "birthday" : "1/1/1981",
+            "avatar" : "",
+            "height": "1.65",
+            "weight": "60",
+            "personalId" : "so chung minh nhan dan",
+            "maritalStatus" : "Single/Maried",
+            "hobby" : "Thich choi bong da ..."
+          },
+          
+          "userRelationships": [
+            {
+              "relation" : "wife",
+              "gender" : "Female",
+              "firstName" : "Wife",
+              "lastName" : "Wife",
+              "birthday" : "1/1/1981",
+              "occupation" : "giao vien"
+            },
+            {
+              "relation" : "father",
+              "gender" : "Male",
+              "firstName" : "Father",
+              "lastName" : "Father",
+              "birthday" : "1/1/1981",
+              "occupation" : "giao vien"
+            }
+          ],
+          
+          "userEducations": [
+            {
+              "schoolOrInstitute" : "Đại Học Thương Mại",
+              "from" : "1/1/2000",
+              "to" : "1/1/2004",
+              "major" : "Chuyên Ngành Vi Tính",
+              "certificate" : "Bằng Đại Học",
+              "language" : "vn",
+              "note" : "Bằng Đại Học Chuyên Ngành Vi Tính"
+            }
+          ],
+          
+          "userWorks": [
+            {
+              "organization" : "HKT",
+              "from" : "2011",
+              "to" : "",
+              "position" : "Chu tich hoi dong quan tri", 
+              "description" : "Chu tich hoi dong quan tri, pho giam doc"
+            }
+          ]
+        }
+      },
+      
+      "memberships": [
+        { "loginId": "tu.phan", "groupPath": "hkt/employees", "capability": "WRITE" },
+        { "loginId": "tu.phan", "groupPath": "hkt/employees/leader", "capability": "WRITE" }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,19 @@
+<br/>
+<div style="border: 1px solid">
+  <div class="layout-150-rest">
+    <div class="col-left">
+      <a href="#" class="onTop" data-role="button">Trên cùng</a>
+      <a class="onUp" data-role="button">Lên trên</a>
+      <a class="onDown" data-role="button">Xuống dưới</a>
+      <a class="onEnd" data-role="button">Dưới cùng</a>
+      <a class="onSave" data-role="button">Lưu</a>
+      <a class="onExit" data-role="button">Thoát</a>
+    </div>
+    
+    <div class="col-right MembershipsList"
+       style="border-left: 1px solid; min-height: 350px; min-width: 500px">
+    </div>
+    
+    <div style="clear: both"></div>
+  </div>
+</div>

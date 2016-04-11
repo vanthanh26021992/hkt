@@ -1,0 +1,135 @@
+<%function renderActions(uiconfig) { %>
+  <%for(var i = 0; i < uiconfig.actions.length ; i++) { %>
+  <%  var action = uiconfig.actions[i] ;%>
+  <%  var icon = action.icon != null ? action.icon : 'grid' ; %>
+      <a class="onClickAction" name="<%=action.name%>" data-role="button" data-icon="<%=icon%>">
+        <%=action.label %>
+      </a>
+  <%}%>
+<%}%>
+
+
+<%function inputOption(state, name, placeholder) { %>
+  <input class="onChangeOptionInput" data-mini="true" 
+         type="text" name="<%=name%>" value="<%=state[name]%>" placeholder="<%=placeholder%>"/>
+<%}%>
+
+<%function selectOption(state, name, options) { %>
+  <select class="onChangeOptionInput" name="<%=name%>" data-mini="true">
+    <%for(var i = 0; i < options.length ; i++) { %>
+    <%
+      var selected = state[name] == options[i].targetEntity ? 'selected' : '' ;
+    %>
+        <option value='<%=options[i].value%>' <%=selected%>>
+          <%=options[i].label%>
+        </option>
+    <%}%>
+  </select>
+<%}%>
+
+
+<%function renderDateOptions(selectedReport) {%>
+  <div class="ui-grid-c">
+    <div class="ui-block-a" style="padding-top: 8px; width: 125px">
+      <label>Group By Date</label>
+    </div>
+    
+    <div class="ui-block-b" style="width: 250px">
+      <select class='onChangeOptionInput' name="dateGroupBy" data-mini="true">
+        <option value="">None</option>
+        <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
+      </select>
+    </div>
+    
+    <div class="ui-block-a" style="padding-top: 8px; width: 125px">
+      <label>From</label>
+    </div>
+    <div class="ui-block-b" style="width: 250px">
+      <%inputOption(selectedReport.state, "fromDate", "DD/MM/YYYY") %>
+    </div>
+    
+    <div class="ui-block-c" style="padding-top: 8px; width: 80px; text-align: center">
+      <label>To</label>
+    </div>
+    
+    <div class="ui-block-d" style="width: 250px">
+      <%inputOption(selectedReport.state, "toDate", "DD/MM/YYYY"); %>
+    </div>
+  </div>  
+<%}%>
+
+<%function renderToolbar(reportGroups, selectedReport) {%>
+  <div class="Toolbar">
+    <div class="ui-grid-a">
+      <div class="ui-block-a" style="width: auto">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <a class="onToggleQueryOption" data-role="button" data-icon="plus" 
+             data-iconpos="notext">Query Options</a>
+          <select class='onSelectReport' name="selectedReport" data-mini="true">
+            <%for(var k = 0; k < reportGroups.length ; k++) { %>
+              <%var reportGroup = reportGroups[k] ; %>
+              <%var reports = reportGroup.reports ; %>
+              <optgroup label="<%=reportGroup.label%>">
+                <%for(var i = 0; i < reports.length ; i++) { %>
+                <%  if(reports[i].uiconfig.name == selectedReport.report.uiconfig.name) { %>
+                      <option value="<%=reports[i].uiconfig.name%>" selected>
+                        <%=reportGroup.label%>: <%=reports[i].uiconfig.label%>
+                      </option>
+                <%  } else { %>
+                      <option value="<%=reports[i].uiconfig.name%>">
+                        <%=reportGroup.label%>: <%=reports[i].uiconfig.label%>
+                      </option>
+                <%  } %>
+                <%}%>
+              </optgroup>
+            <%}%>
+          </select>
+                
+          <select class='onSelectDateRange' name="selectDateRange" data-mini="true">
+            <option value="">Date Range</option>
+            <option value="currentMonth">Current Month</option>
+            <option value="last3Month">Last 3 month</option>
+            <option value="currentYear">Current Year</option>
+          </select>
+          
+          <%renderActions(selectedReport.report.uiconfig) ; %>
+        </div>
+      </div>
+      
+      <div class="ui-block-b" style="width: 175px">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+        </div>
+      </div>
+    </div>
+    
+    <div class="QueryOption" style="display: none">
+      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <%renderDateOptions(selectedReport) ;%>
+        <div class="ui-grid-a">
+          <%var options = selectedReport.report.uiconfig.options ; %>
+          <%for(var i = 0; i < options.length; i++) { %>
+            <div class="ui-block-a" style="width: 125px; padding-top: 8px">
+              <label><%=options[i].label%>:</label>
+            </div>
+            <div class="ui-block-b" style="width: 325px">
+              <%
+                if(options[i].options) {
+                  selectOption(selectedReport.state, options[i].name, options[i].options) ;
+                } else {
+                  inputOption(selectedReport.state, options[i].name, options[i].placeholder) ;
+                }
+              %>
+            </div>
+          <%}%>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+<%}%>
+
+<div class="UIReportTable">
+  <%renderToolbar(reportGroups, selectedReport); %>
+  
+  <div class="UIReportTableData"></div>
+</div>

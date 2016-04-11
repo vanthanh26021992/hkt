@@ -1,0 +1,218 @@
+{
+  "mimeType": "employee/contract",
+  "description": "template for the employee contract",
+  "template": { 
+    "tabs": [
+      {
+        "name": "info", "label": "Info",
+        "sections": [
+          {
+            "section": "info", "label": "Info",
+            "fields": [
+              { 
+                "label": "STT", "name": "info:stt", "type": "integer", "required": true, 
+                "validator": {"name": "integer", "from": 1} 
+              },
+              { 
+                "label": "Type", "name": "info:type", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Code", "name": "info:code", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Description", "name": "info:description", "type": "string", 
+                "textarea": { }, "validator": {"name": "empty"} 
+              }
+            ]
+          },
+          
+          {
+            "section": "company", "label": "Company",
+            "fields": [
+              { 
+                "label": "Name", "name": "company:name", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Registration Code", "name": "company:registrationCode", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Representative", "name": "company:representative", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Contact", "name": "company:contact", "type": "string", "required": true,
+                "textarea": { }, "validator": {"name": "empty"} 
+              }
+            ]
+          },
+          
+          {
+            "section": "employee", "label": "Employee",
+            "fields": [
+              { 
+                "label": "Name", "name": "employee:name", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Personal Id", "name": "employee:personalId", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Code", "name": "employee:code", "type": "string", "required": true, 
+                "validator": {"name": "empty"} 
+              },
+              { 
+                "label": "Contact", "name": "employee:contact", "type": "string", "required": true, 
+                "textarea": { }, "validator": {"name": "empty"} 
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "summary", "label": "Summary",
+        "sections": [
+          {
+            "section": "effective", "label": "Effective",
+            "fields": [
+              { 
+                "label": "Signed Date", "name": "effective:signed", "type": "date"
+              },
+              { 
+                "label": "Effective Date", "name": "effective:date", "type": "date" 
+              }
+            ]
+          },
+          {
+            "section": "termination", "label": "Termination",
+            "fields": [
+              { 
+                "label": "Termination Date", "name": "termination:date", "type": "date"
+              },
+              { 
+                "label": "Auto Renew", "name": "termination:autoRenew", "type": "boolean" 
+              },
+              { 
+                "label": "Auto Renew Date", "name": "termination:autoRenewDate", "type": "date" 
+              },
+              { 
+                "label": "Auto Renew To", "name": "termination:autoRenewTo", "type": "date"
+              }
+            ]
+          },
+          {
+            "section": "benefice", "label": "Benefice",
+            "fields": [
+              { 
+                "label": "Lunch", "name": "benefice:lunch", "type": "number" 
+              },
+              { 
+                "label": "Phone", "name": "benefice:phone", "type": "number" 
+              },
+              { 
+                "label": "Social Insurance", "name": "benefice:socialInsurance", "type": "number" 
+              },
+              { 
+                "label": "Health Insurance", "name": "benefice:healthInsurance", "type": "number" 
+              }
+            ]
+          },
+          {
+            "section": "salary", "label": "Salary",
+            "fields": [
+              { 
+                "label": "Base Salary", "name": "salary:base", "type": "number" 
+              },
+              { 
+                "label": "Coefficiente", "name": "salary:coefficient", "type": "number" 
+              },
+              { 
+                "label": "Sale Salary", "name": "salary:sale", "type": "number" 
+              },
+              { 
+                "label": "Sale Coefficiente", "name": "salary:saleCoefficient", "type": "number" 
+              },
+              { 
+                "label": "Payment Period", "name": "salary:paymentPeriod", "type": "string" 
+              },
+              { 
+                "label": "Raised Type", "name": "salary:raisedType", "type": "string" 
+              },
+              { 
+                "label": "Raised Period", "name": "salary:raisedPeriod", "type": "string" 
+              }
+            ]
+          },
+          {
+            "section": "companyCompensation", "label": "Company Compensation",
+            "fields": [
+              { 
+                "label": "Layoff", "name": "compensation:company:layoff", "type": "number" 
+              },
+              { 
+                "label": "Layoff Clause", "name": "compensation:company:layoff:clause", 
+                "type": "string", "textarea": {} 
+              },
+              { 
+                "label": "Fire", "name": "compensation:company:fire", "type": "number" 
+              },
+              { 
+                "label": "Fire Clause", "name": "compensation:company:fire:clause", 
+                "type": "string", "textarea": {} 
+              }
+            ]
+          },
+          {
+            "section": "employeeCompensation", "label": "Employee Compensation",
+            "fields": [
+              { 
+                "label": "Resign", "name": "compensation:employee:resign", "type": "number" 
+              },
+              { 
+                "label": "Resign Clause", "name": "compensation:employee:resign:clause", 
+                "type": "string", "textarea": {} 
+              },
+              { 
+                "label": "Quit", "name": "compensation:employee:quit", "type": "number" 
+              },
+              { 
+                "label": "Quit Clause", "name": "compensation:employee:quit:clause", 
+                "type": "string", "textarea": {} 
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "clauses", "label": "Clauses",
+        "sections": [
+          {
+            "section": "clauses", "label": "Clauses",
+            "fields": [
+              { 
+                "name": "clauses", "type": "string", "textarea": {"height": "400px" }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "attachments", "label": "Attachments",
+        "sections": [
+          {
+            "section": "attachments", "label": "Attachments",
+            "fields": [
+              { 
+                "label": "Signed Document", "name": "attachment:signed-document", "type": "FileRef"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

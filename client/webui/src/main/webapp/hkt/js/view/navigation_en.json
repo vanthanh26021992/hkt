@@ -1,0 +1,18 @@
+{
+  "account": "Account",
+  "account.Accounts": "Accounts",
+  "account.Groups":   "Groups",
+  "account.ListGroup":   "List Group",
+   
+  "cms": "CMS",
+  "cms.Explorer": "Explorer",
+  "cms.Templates": "Templates",
+
+  "admin": "Admin",
+  "admin.Configs": "Configs",
+  "admin.Monitors": "Monitors",
+
+  "test": "Test",
+  "test.Tests": "Test",
+  "test.Samples": "Samples"
+}

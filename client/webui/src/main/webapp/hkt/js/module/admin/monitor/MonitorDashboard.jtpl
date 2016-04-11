@@ -1,0 +1,28 @@
+<div>
+  <div class="ui-grid-a">
+    <%var btype = null ;%>
+    <%summaries.forEach(function(summary) {%>
+    <%  btype = btype == 'a' ? 'b' : 'a' ; %>
+        <div class="ui-block-<%=btype%>" style="padding: 10px">
+          <div style="border: 6px groove; height:250px; padding: 10px">
+            <table>
+              <tr>
+                <td colspan="2" style="text-align: left">
+                  <strong><%=summary.name%></strong><br/>
+                  (<%=summary.description%>)
+                </td>
+              <tr>
+              <%summary.properties.forEach(function(prop) {%>
+                <tr>
+                  <td><%=prop.name%>:</td>
+                  <td><%=prop.value%></td>
+                <tr>
+              <%})%>
+            </table>
+          </div>
+          <a class="onShowServerCallMonitor" monitor="<%=summary.name%>" data-role="button" 
+             data-mini="true">More <%=summary.name%></a>
+        </div>
+    <%})%>
+  </div><!-- /grid-a -->
+</div>

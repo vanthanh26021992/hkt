@@ -1,0 +1,78 @@
+<%
+  function renderEditFooter(config, state, title) {
+%>
+  <%if(config.actions != null) {%>
+    <div class="ui-grid-a" style="border-top: 1px solid; margin: 0px">
+      <div class="ui-block-a" style="padding:0px; padding-top: 15px">
+      </div>
+      
+      <div class="ui-block-b">
+        <div style="float: right; width: auto" 
+             data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <%for(var i = 0; i<config.actions.length; i++) { %>
+          <%var action =  config.actions[i];%>
+            <%var hidden = action.hiden; %>
+            <%if(!hidden) {%>
+              <a class="onAction" action='<%=action.action%>' 
+                 data-role="button" data-icon="<%=action.icon%>"><%=action.label %></a>
+            <%}%>
+          <%}%>
+        </div>
+        <div><span style="clear: both"/></div>
+      </div>
+    </div>
+  <%}%>
+<%}%>
+
+
+<%
+  function renderNonEditFooter(config, state, title) {
+%>
+  <%if(config.actions != null) {%>
+    <div class="ui-grid-a" style="border-top: 1px solid; margin: 0px">
+      <div class="ui-block-a" style="padding:0px; padding-top: 15px">
+      </div>
+      
+      <div class="ui-block-b">
+        <div style="float: right; width: auto" 
+             data-role="controlgroup" data-mini="true" data-type="horizontal">
+             <%console.log( config.actions) %>
+          <%for(var i = 0; i<config.actions.length; i++) { %>
+          <%var action =  config.actions[i];%>
+            <%var hidden = action.hiden; %>
+              <a class="onAction" action='<%=action.action%>' 
+                 data-role="button" data-icon="<%=action.icon%>"><%=action.label %></a>
+          <%}%>
+        </div>
+        <div><span style="clear: both"/></div>
+      </div>
+    </div>
+  <%}%>
+<%}%>
+
+<div class="UICollapsible">
+  
+  <%components.forEach(function(comp, idx) { %>  
+    <div class="UICollapsibleBlock" style="padding: 10px 0px">
+      <%var icon = comp.collapible.collapsed ? "plus" : "minus"; %>
+      <%var display = comp.collapible.collapsed ? "none" : "block"; %>
+      <h4 style="margin: 0px; padding: 0px">
+        <a class="onToggleBlock" component="<%=idx%>" data-role="button" 
+           data-icon="<%=icon%>" data-iconpos="notext" data-inline="true">Collapse/Expand</a>
+        <%=comp.label%>
+      </h4>
+      
+      <div style="padding: 0px 15px; display: <%=display%>" 
+           class="UICollapsibleBlockContent<%=idx%>">
+      </div>
+    </div>
+  <%})%>  
+   <%
+   console.log(config.editMode);
+   if(config.editMode){
+	   renderEditFooter(config, state, title) ;
+  }else{
+	  renderNonEditFooter(config, state, title) ;
+  }
+	  %>
+</div>

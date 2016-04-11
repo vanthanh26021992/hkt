@@ -1,0 +1,41 @@
+<%function renderHeaders(data) { %>
+  <thead>
+    <tr>
+      <%var fields = data.displayFields ;%>
+      <%for(var i = 0; i < fields.length ; i++) { %>
+      <%  if(fields[i].type == 'number') {%>
+            <th class="cell-right-align"><%=fields[i].label%></th>
+      <%  } else {%>
+            <th><%=fields[i].label%></th>
+      <%  }%>
+      <%}%>
+    </tr>
+  </thead>
+<%}%>
+
+<%function renderRows(data) { %>
+  <tbody>
+    <%var fields = data.displayFields ;%>
+    <%var records = data.displayRecords ;%>
+    <%for(var i = 0; i < records.length ; i++) { %>
+        <tr>
+    <%    for(var j = 0; j < fields.length ; j++) { %>
+    <%      var value = records[i][fields[j].label] ; %>
+    <%      if(fields[j].type == 'number' && value != null) {%>
+    <%        value = value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');%>
+              <td class="cell-right-align"><%=value%></td>
+    <%      } else if(fields[j].type == 'integer') {%>
+              <td class="cell-right-align"><%=value%></td>
+    <%      } else {%>
+              <td><%=value%></td>
+    <%      }%>
+    <%    }%>
+        </tr>
+    <%}%>
+  </tbody>
+<%}%>
+
+<table>
+  <%renderHeaders(data); %>
+  <%renderRows(data); %>
+</table>

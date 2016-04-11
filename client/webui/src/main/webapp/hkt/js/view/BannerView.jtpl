@@ -1,0 +1,12 @@
+<div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
+  <a href="javascript:app.view.NavigationView.toggleNav()" data-role="button" data-icon="bars">Menu</a>
+  <a href="javascript:window.location='login.html'" data-role="button" data-icon="gear">Logout</a>
+  <select class="onSelectLanguage" name="selectLanguage">
+    <%for(var i = 0; i < languages.length; i++) {%>
+    <%  var lang = languages[i]; %>
+    <%  var selected = lang.code == selectLanguage ? 'selected': '' ;%>
+        <option value="<%=lang.code %>" <%=selected%>><%=lang.label%></option>
+    <%}%>
+  </select>
+</div>
+<h3 class="ui-title" role="heading"></h3>

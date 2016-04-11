@@ -1,0 +1,251 @@
+<%function renderDfltToolbar(config, toolbarConfig, tableId) {%>
+  <div class="UITableDefaultToolbar Toolbar">
+    <div class="ui-grid-b">
+      <div class="ui-block-a" style="width: auto">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <a class="onToggleColumnSelector" data-role="button" data-icon="grid" 
+             data-iconpos="notext">Columns</a>
+          
+          <select class="onSelectDisplayRow" name="displayRow">
+            <%
+              var rowOpt = [5, 10, 20, 50, 100, 200, 500]
+            %>
+            <%
+              for(var i = 0; i < rowOpt.length ; i++) {
+            %>
+            <%
+              if(rowOpt[i] == 10) {
+            %>
+                  <option value="<%=rowOpt[i]%>" selected="true"><%=rowOpt[i]%></option>
+            <%
+              } else {
+            %>
+                  <option value="<%=rowOpt[i]%>"><%=rowOpt[i]%></option>
+            <%
+              }
+            %>
+            <%
+              }
+            %>
+          </select>
+          <%
+            if(toolbarConfig.actions != null) {
+          %>
+          <%
+            var actions =  toolbarConfig.actions ;
+          	var disable = "";
+      		if(config.isPopup == true){
+      			 disable = ' ui-disabled' ;
+      		}else{
+      			disable = '';
+      		}
+          %>
+          <%
+            for(var i = 0; i < actions.length; i++) {
+          %>
+                <a class="onDfltToolbarAction <%=disable %>" data-role="button" data-icon="<%=actions[i].icon%>" 
+                   action="<%=i%>" <%=disable%>><%=actions[i].label%></a>
+          <%
+            }
+          %>
+          <%
+            }
+          %>
+        </div>
+      </div>
+      
+      <div class="ui-block-b" style="width: 150px">
+        <select class='onDfltBeanFilter' name="selectBeanFilterField" data-mini="true">
+          <%
+            for(var i = 0; i < config.bean.fields.length ; i++) {
+          %>
+            <%
+              if(config.bean.fields[i].filterable) {
+            %>
+              <option value="<%=config.bean.fields[i].field%>"><%=config.bean.fields[i].label%></option>
+            <%
+              }
+            %>
+          <%
+            }
+          %>
+        </select>
+      </div>
+      
+      <div class="ui-block-c" style="width: 175px">
+        <input class="onDfltBeanFilter" type="search" data-mini="true" name="beanFilterField" value=""/>
+      </div>
+    </div>
+    
+    <div class="ColumnSelector" style="display: none">
+      <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+        <%
+          var fields = config.bean.fields ;
+        %>
+        <%
+          for(var i = 0; i < fields.length; i++) {
+        %>
+        <%
+          var checked = "";
+        %>
+        <%
+          if(fields[i].toggled) checked = "checked";
+        %>
+            <input id="<%=fields[i].field%><%=tableId%>" class="onToggleColumn" 
+                   type="checkbox" <%=checked%> name="<%=fields[i].field%>" value="true"/>
+            <label for="<%=fields[i].field%><%=tableId%>">
+              <%=fields[i].label%>
+            </label>
+        <%
+          }
+        %>
+      </fieldset>
+    </div>
+    
+  </div>
+<%
+  }
+%>
+
+<%
+  function renderFilterOperatorOption(field) {
+%>
+<%
+  var stringOpts = ['EQUAL', 'LIKE'] ;
+%>
+<%
+  var numberOpts = ['EQUAL', 'LT', 'GT'] ;
+%>
+<%
+  var options = stringOpts ;
+%>
+<%
+  if(field.type == 'number') options = numberOpts;
+%>
+    <div data-role="controlgroup" data-mini="true" style="width: 110px">
+      <select class="onSelectSearchOperatorOption">
+        <%
+          for(var i = 0; i < options.length; i++) {
+        %>
+        <%
+          var selected = field.operator == options[i] ? 'selected': '';
+        %>
+            <option <%=selected%>><%=options[i]%></option>
+        <%
+          }
+        %>
+      </select>
+    </div>
+<%
+  }
+%>
+
+<%
+  function renderFilterToolbar(config) {
+%>
+  <div class="UITableFilterToolbar Toolbar" style="display: none">
+    <div class='ui-grid-b'>
+      <div class='ui-block-a' style="width: auto">
+        <%
+          var field = config.toolbar.filter.fields[0] ;
+        %>
+        <%
+          renderFilterOperatorOption(field);
+        %>
+    </div>
+      <div class='ui-block-b' style="width: 350px">
+        <%
+          var field = config.toolbar.filter.fields[0] ;
+        %>
+        <input type="text" data-mini="true" name="<%=field.field%>" 
+               value="" placeholder="<%=field.label%>" operator="<%=field.operator%>" />
+      </div>
+      <div class='ui-block-c' style="width: 125px">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <a class="onFilter" data-role="button">Filter</a>
+          <a class="onFilterMoreOption" data-role="button" data-icon="grid" 
+             data-iconpos="notext">More Filter Options</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="MoreFilterOption" style="display: none">
+      <%
+        var fields = config.toolbar.filter.fields ;
+      %>
+      <%
+        for(var i = 1; i < fields.length; i++) {
+      %>
+      <%
+        var field = fields[i] ;
+      %>
+          <div class="ui-grid-b">
+            <div class="ui-block-a" style="width: auto">
+              <%
+                renderFilterOperatorOption(field);
+              %>
+            </div>
+            <div class="ui-block-b" style="width: 350px">
+              <input type="text" name="<%=field.field%>" value="" 
+                     placeholder="<%=field.label%>" data-mini="true" operator="<%=field.operator%>"/>
+            </div>  
+          </div>
+      <%
+        }
+      %>
+    </div>
+  </div>
+<%
+  }
+%>
+
+<%
+  function renderSearchToolbar(config) {
+%>
+  <div class="UITableSearchToolbar Toolbar" style="display: none">
+    <div class='ui-grid-a'>
+      <div class='ui-block-b' style="width: 350px">
+        <input type="text" data-mini="true" value="" placeholder="Search Text" />
+      </div>
+      <div class='ui-block-b' style="width: 125px">
+        <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <a class="onSearch" data-role="button">Search</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<%
+  }
+%>
+
+
+<%
+  function renderToolbars(config, tableId) {
+    if(config.toolbar == null) return ;
+    if(config.toolbar.dflt != null) {
+  renderDfltToolbar(config, config.toolbar.dflt, tableId) ;
+    }
+    if(config.toolbar.filter != null) {
+  renderFilterToolbar(config) ;
+    }
+    if(config.toolbar.search != null) {
+  renderSearchToolbar(config) ;
+    }
+  }
+%>
+
+<div class="UITable">
+<%if(config.hidenToolbar==null || !config.hidenToolbar){ %>
+  <div class="UITableToolbars ui-grid-a">
+    <div class="ui-block-a" style="width: 96.5%">
+      <%renderToolbars(config,tableId) %>
+    </div>
+    <div class="ui-block-b" style="width: 25px">
+      <a class="onSwitchToolbar" data-role="button" data-icon="bars" 
+         data-iconpos="notext" data-inline="true">More Toolbars</a>
+    </div>
+  </div>
+  <%} %>
+  <div class="UITableRows">
+  </div>
+</div>

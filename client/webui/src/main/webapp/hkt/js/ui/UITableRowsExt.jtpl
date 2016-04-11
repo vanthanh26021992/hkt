@@ -1,0 +1,73 @@
+<%function renderBeanHeaders(config) {%>
+  <thead>
+    <tr>
+      <th>#</th>
+      <%
+        var fields = config.bean.fields ;
+      %>
+      <%
+        var actions = config.bean.actions ;
+      %>
+      <%
+        for(var i = 0; i < fields.length ; i++) {
+      %>
+        <%
+          if(fields[i].toggled != null && fields[i].toggled) {
+        %>
+          <th><%=fields[i].label%></th>
+        <%
+          }
+        %>
+      <%
+        }
+      %>
+      <th>Chọn</th>
+    </tr>
+  </thead>
+<%
+  }
+%>
+
+<%function renderBeanRows(config, state, pageList, total) { %>
+  <tbody>
+    <%var from = pageList.getFrom();%>
+    <%var fields = config.bean.fields;%>
+    <%var actions = config.bean.actions;%>
+    <%var rows = pageList.currentPageItems();%>
+    <%for(var i = 0; i < rows.length ; i++) {%>
+      <tr row="<%=i%>">
+        <%
+          var bean = rows[i].bean ;
+          var statusClass = "ui-origin-text" ;
+        %>
+        <td>
+          <span class="<%=statusClass%>"><%=(from + i + 1)%></span>
+        </td>
+        <%for(var j = 0; j < fields.length ; j++) {%>
+        <%  if(fields[j].toggled == null || !fields[j].toggled) continue ;%>
+        <%  var cell = null ; %>
+        <%  if(fields[j].custom != null) {%>
+        <%    cell =  fields[j].custom.getDisplay(bean) ;%>
+        <%  } else {%>
+        <%    cell = bean[fields[j].field] ; %>
+        <%  }%>
+           <td>
+         <%=cell%>
+           </td>
+        <%}%>
+        <td class="cell-center-align" style="padding: 5px 5px 5px 5px">
+                <input class="onBeanAction" action=0 type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true">
+          </td>
+      </tr>
+    <%}%>
+  </tbody>
+<%
+  }
+%>
+
+<div>
+  <table>
+    <%renderBeanHeaders(config); %>
+    <%renderBeanRows(config, state, pageList); %>
+  </table>
+</div>

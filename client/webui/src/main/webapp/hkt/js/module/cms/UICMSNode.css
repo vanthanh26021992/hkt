@@ -1,0 +1,15 @@
+.UICMSNode {
+}
+
+.UICMSNode div.label {
+	width: 150px ;
+	padding-top: 8px ;
+	float: left ;
+}
+
+.UICMSNode div.input {
+	margin-left: 150px ;
+}
+
+.UICMSNode div.input-no-label {
+}

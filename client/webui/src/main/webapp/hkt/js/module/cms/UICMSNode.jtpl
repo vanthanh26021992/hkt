@@ -1,0 +1,159 @@
+<%function renderHeader(config, title) { %>
+  <div class="ui-grid-a" style="border-bottom: 1px solid; margin: 25px 0px">
+    <div class="ui-block-a" style="padding:0px; padding-top: 15px">
+      <h3 style="margin: 0px"><%=config.label%></h3>
+    </div>
+    
+    <div class="ui-block-b">
+      <div style="float: right; width: auto" 
+           data-role="controlgroup" data-mini="true" data-type="horizontal">
+        <a class="onBack" data-role="button" data-icon="back">Back</a>
+        <a class="onSave" data-role="button" data-icon="check">Save</a>
+      </div>
+      <div><span style="clear: both"/></div>
+    </div>
+  </div>
+<%}%>
+
+<%function renderFooter(config, title) { %>
+  <%if(config.actions != null) {%>
+    <div class="ui-grid-a" style="border-top: 1px solid; margin: 0px">
+      <div class="ui-block-a" style="padding:0px; padding-top: 15px">
+      </div>
+      
+      <div class="ui-block-b">
+        <div style="float: right; width: auto" 
+             data-role="controlgroup" data-mini="true" data-type="horizontal">
+          <%config.actions.forEach(function(action) { %>
+            <a class="onAction" action='<%=action.action%>' 
+               data-role="button" data-icon="grid"><%=action.label %></a>
+          <%})%>
+        </div>
+        <div><span style="clear: both"/></div>
+      </div>
+    </div>
+  <%}%>
+<%}%>
+
+<%function renderTabs(config, nodeState) { %>
+  <div style="margin-bottom: 25px" data-role="controlgroup" data-mini="true" 
+       data-type="horizontal"  data-corners="false">
+    <%for(var i = 0; i < config.tabs.length; i++) { %>
+      <%var tab = config.tabs[i] ;%>
+      <%var tabState = nodeState.state.tabs[tab.name] ;%>
+      <%if(tabState == null) tabState = {} ;%>
+      <%var disabledClass = tabState.select ? 'ui-disabled' : '' ;%>
+        <a class="onSelectTab <%=disabledClass%>" tab="<%=tab.name%>"
+           data-role="button"><%=tab.label%></a>
+    <%}%>
+    <%if(nodeState.state.edit) {%>
+      <a class="onToggleMode" data-role="button" data-icon="grid" data-iconpos="notext">View</a>
+    <%} else {%>
+      <a class="onToggleMode" data-role="button" data-icon="edit" data-iconpos="notext">Edit</a>
+    <%}%>
+  </div>
+<%}%>
+
+<%function renderTabBody(tabConfig, nodeState) { %>
+  <%
+    var tabState = nodeState.state.tabs[tabConfig.name];
+    if(tabState == null || !tabState.select) return ;
+    if(tabState.sections == null) tabState.sections = {} ;
+  %>
+  <div class="UICMSNodeTabBody" tab="<%=tabConfig.name%>">
+    <%tabConfig.sections.forEach(function(section) { %> 
+      <div class="UICMSNodeSection" section="<%=section.section%>">
+        <%
+          var sectionState = tabState.sections[section.section]; 
+          if(sectionState == null) sectionState = {} ; 
+          var icon = sectionState.collapsed ? "plus" : "minus"; 
+        %>
+        <h4 style="margin: 0px; padding: 0px">
+          <a class="onToggleSection" data-role="button" 
+             data-icon="<%=icon%>" data-iconpos="notext" data-inline="true">Collapse/Expand</a>
+          <%=section.label%>
+        </h4>
+        <%
+          if(!sectionState.collapsed) {
+            if(nodeState.state.edit) {
+              renderEditableSectionBody(section, nodeState);
+            } else {
+              renderNonEditableSectionBody(section, nodeState);
+            }
+          }
+        %>
+      </div>
+    <%});%>
+  </div>
+<%}%>
+
+<%function renderInputField(field, fieldValue, disabled) { %>
+  <input class="onChangeInput" type="text" name="<%=field.name%>" 
+         value="<%=fieldValue%>" data-mini="true" <%=disabled%> />
+<%}%>
+
+<%function renderTextareaField(field, fieldValue, disabled) { %>
+  <%
+    var height = "75px";
+    if(field.textarea.height != null) height = field.textarea.height ;
+  %>
+  <textarea class="onChangeInput" style="height: <%=height%>"
+            name="<%=field.field%>" <%=disabled%>><%=fieldValue%></textarea>
+<%}%>
+
+<%function renderEditableSectionBody(section, nodeState)  {%>
+  <div class="UICMSNodeSectionBody" style="padding: 15px">
+    <%var fields = section.fields ; %>
+    <%var attributes = nodeState.node.attributes ; %>
+    <%if(attributes == null) attributes = {} ; %>
+    <%for(var i = 0; i < fields.length; i++) {%>
+      <%var field = fields[i] ;%>
+      <%var inputCssClass = 'input-no-label' ;%>
+      <%if(field.label != null) {%>
+        <%inputCssClass = 'input' ;%>
+        <div class="label"><%=field.label%>:</div>
+      <%}%>
+      
+      <div class="<%=inputCssClass%>">
+        <%
+          if(field.textarea != null) {
+            renderTextareaField(field, '', false); 
+          } else {
+            renderInputField(field, '', false);
+          }
+        %>
+      </div>
+    <%}%>
+  </div>
+<%}%>
+
+<%function renderNonEditableSectionBody(sectionConfig, nodeState)  {%>
+  <div class="UICMSNodeSectionBody" style="padding: 15px">
+    <table style="margin: 0px">
+      <%var fields = sectionConfig.fields ; %>
+      <%var attributes = nodeState.node.attributes ; %>
+      <%if(attributes == null) attributes = {} ; %>
+      <%for(var i = 0; i < fields.length; i++) {%>
+        <tr>
+          <%var field = fields[i] ;%>
+          <%var attr = attributes[field.name] ;%>
+          <%var attrValue = '' ;%>
+          <%if(attributes[field.name] != null)  attrValue = attributes[field.name].value ;%>
+          <td style="width: 200px"><%=field.label%></td>
+          <td><%=attrValue%></td>
+        </tr>
+      <%}%>
+    </table>
+  </div>
+<%}%>
+
+<div class="UICMSNode">
+  <%renderHeader(config);%>
+  <%renderTabs(config, nodeState);%>
+  
+  <%config.tabs.forEach(function(tab) { %> 
+    <%renderTabBody(tab, nodeState);%>
+  <%});%>
+  
+  <%renderFooter(config);%>
+</div>

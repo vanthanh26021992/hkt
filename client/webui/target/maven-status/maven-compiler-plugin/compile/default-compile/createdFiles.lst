@@ -1,0 +1,5 @@
+com\hkt\client\web\rest\Controller.class
+com\hkt\client\web\rest\ServiceDescription.class
+com\hkt\client\web\rest\ClientContext.class
+com\hkt\client\web\rest\WebAppConfig$AdminAuthentication.class
+com\hkt\client\web\rest\WebAppConfig.class

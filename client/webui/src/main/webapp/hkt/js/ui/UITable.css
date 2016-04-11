@@ -1,0 +1,41 @@
+.UITable {
+}
+
+.UITable table {
+  width: 99%;
+  border-collapse:collapse;
+  margin: 0px auto;
+}
+
+.UITable td {
+  border: 1px solid ;
+  padding: 5px;
+}
+.UITable th {
+  border: 1px solid ;
+  padding: 5px;
+  text-align: center ;
+}
+
+.UITable .hide-column {
+  display: none ;
+}
+
+
+.UITable .cell-center-align {
+	text-align: center ;
+}
+
+.UITable .cell-right-align {
+  text-align: right ;
+}
+
+.UITable .action-icon {
+  margin: 0px ;
+  padding: 0px ;
+}
+
+.btn-is-disabled{
+	pointer-events: none;
+	opacity: 0.2;
+}

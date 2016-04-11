@@ -1,0 +1,18 @@
+<div>
+  <div data-role="controlgroup" data-mini="true" data-type="horizontal">
+    <%for(var i = 0; i < config.tabs.length; i++) { %>
+    <%  var tab = config.tabs[i]; %>
+    <%  var icon = tab.icon ? tab.icon : 'grid' ; %>  
+    <%  var disable = tab.name == state.tabConfig.name ? ' ui-disabled' : '' ; %>
+        <a class="onSelectTab<%=disable%>" tab="<%=tab.name%>" data-role="button" data-icon="<%=icon%>">
+          <%=tab.label%>
+        </a>
+    <%}%>
+  </div>
+  
+  <hr/>
+  
+  <div class="UITab">
+    this is a test
+  </div>
+</div>

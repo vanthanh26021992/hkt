@@ -1,0 +1,44 @@
+
+
+.UIBeanExt {
+}
+
+.UIBeanExt table {
+  width: 99%;
+  border-collapse:collapse;
+  margin: 0px auto;
+}
+
+.UIBeanExt th, 
+.UIBeanExt td {
+  border: 0px solid ;
+  padding:0px 0px 0px 2px;
+}
+
+.UIBeanExt .tree {
+  border: none ;
+  border-left: 0px solid ;
+  padding: 0px;
+}
+
+.UIBeanExt .hide-column {
+  display: none ;
+}
+
+
+.UIBeanExt .cell-center-align {
+  text-align: center ;
+}
+
+.UIBeanExt .cell-right-align {
+  text-align: right ;
+}
+
+.UIBeanExt .action {
+  text-decoration: none;
+}
+
+.UIBeanExt .action-icon {
+  margin: 0px ;
+  padding: 0px ;
+}
