@@ -1,0 +1,32 @@
+{
+  "requestAtTime": 123455555,
+  "serviceReceiveAtTime": 12345556,
+  "serviceFinishAtTime": 12334455,
+
+  "module":    "organization",
+  "service":   "users",
+  "method":    "findUsers",
+
+  "data": {
+    "string": "string",
+    "stringArray": ["string 1", "string 2"],
+    "integer": 1,
+    "integerArray": [1, 2 , 3, 4, 5],
+    "list": ["string 1", "string 2"],
+
+    "nestedData": {
+      "string": "string",
+      "stringArray": ["string 1", "string 2"],
+      "integer": 1,
+      "integerArray": [1, 2 , 3, 4, 5],
+      "list": ["string 1", "string 2"]
+    }
+  },
+
+  "logs": [
+    "message 1",
+    "message 2"
+  ],
+
+  "exception": "the stacktrace" 
+}

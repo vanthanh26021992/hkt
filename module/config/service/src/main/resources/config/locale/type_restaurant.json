@@ -1,0 +1,12 @@
+{
+  "module": "config",
+  "service": "LocaleService",
+  "name": "type_restaurant",
+
+  "options": [
+    { "label": "Nhà hàng", "code": "restaurant", "priority": 1, "description": "Quy mô Nhà hàng" },
+    { "label": "Cafe", "code": "cafe", "priority": 2, "description": "Quy mô quán Cafe" },
+    { "label": "Karaoke", "code": "karaoke", "priority": 3, "description": "Quy mô Karaoke" },
+    { "label": "Công ty Cổ Phần", "code": "company", "priority": 4, "description": "Quy mô Công ty" }
+  ]
+}

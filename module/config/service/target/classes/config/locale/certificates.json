@@ -1,0 +1,11 @@
+{
+  "module": "config",
+  "service": "LocaleService",
+  "name": "certificate",
+
+  "options": [
+    { "label": "Trung học phổ thông", "code": "thpt", "priority": 1, "description": "Trình độ Trung học phổ thông" },
+    { "label": "Cao Đẳng", "code": "cd", "priority": 2, "description": "Trình độ Cao đẳng" },
+    { "label": "Đại Học", "code": "dh", "priority": 3, "description": "Trình độ Đại học" }
+  ]
+}

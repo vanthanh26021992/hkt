@@ -1,0 +1,8 @@
+com\hkt\module\core\script\ScriptRunnerUnitTest.class
+com\hkt\module\core\AbstractUnitTest.class
+com\hkt\module\core\rest\RestServiceUnitTest.class
+com\hkt\module\core\search\DocumentIndexerAndSearcherUnitTest.class
+com\hkt\module\core\search\FSSearchServiceUnitTest$TestDocSearchPlugin.class
+com\hkt\module\core\search\FSSearchServiceUnitTest.class
+com\hkt\module\core\search\FSSearchServiceUnitTest$TestDoc.class
+com\hkt\module\core\rest\RestServiceUnitTest$Data.class

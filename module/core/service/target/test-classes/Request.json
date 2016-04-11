@@ -1,0 +1,26 @@
+{
+  "requestAtTime": 123455555,
+  "module":    "organization",
+  "service":   "users",
+  "method":    "findUsers",
+  "params": {
+    "string": "string",
+    "integer": 1,
+    "object": {
+      "string": "string",
+      "stringArray": ["string 1", "string 2"],
+      "integer": 1,
+      "integerArray": [1, 2 , 3, 4, 5],
+      "list": ["string 1", "string 2"],
+
+      "nestedData": {
+        "string": "string",
+        "stringArray": ["string 1", "string 2"],
+        "integer": 1,
+        "integerArray": [1, 2 , 3, 4, 5],
+        "list": ["string 1", "string 2"]
+      }
+    }
+  },
+  "logEnable": true
+}

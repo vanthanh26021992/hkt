@@ -1,0 +1,11 @@
+com\hkt\module\cms\util\CMSScenario.class
+com\hkt\module\cms\entity\NodeAttributes.class
+com\hkt\module\cms\CMSService.class
+com\hkt\module\cms\entity\Node.class
+com\hkt\module\cms\repository\NodeRepositoryCustom.class
+com\hkt\module\cms\entity\NodeDetail.class
+com\hkt\module\cms\repository\NodeAttributeRepository.class
+com\hkt\module\cms\entity\NodeAttribute.class
+com\hkt\module\cms\entity\Template.class
+com\hkt\module\cms\repository\NodeRepositoryImpl.class
+com\hkt\module\cms\repository\NodeRepository.class

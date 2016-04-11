@@ -1,0 +1,11 @@
+{
+  "module": "config",
+  "service": "LocaleService",
+  "name": "genders",
+
+  "options": [
+    { "label": "Nam", "code": "male", "priority": 1, "description": "Nam giới" },
+    { "label": "Nữ", "code": "female", "priority": 2, "description": "Nữ giới" },
+    { "label": "Khác", "code": "other", "priority": 3, "description": "Khác" }
+  ]
+}

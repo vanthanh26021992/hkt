@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                      http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/tx
+                      http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		                  http://www.springframework.org/schema/data/jpa 
+                      http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+                      http://www.springframework.org/schema/context
+                      http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <bean id="UIConfigServiceDispatcher" class="com.hkt.module.core.rest.ProxyDispatcher">
+    <property name="module" value="config" />
+    <property name="serviceName" value="UIConfigService" />
+    <property name="service" ref="UIConfigService" />
+  </bean>
+  
+  <bean id="LocaleServiceDispatcher" class="com.hkt.module.core.rest.ProxyDispatcher">
+    <property name="module" value="config" />
+    <property name="serviceName" value="LocaleService" />
+    <property name="service" ref="LocaleService" />
+  </bean>
+   <bean id="GenericOptionServiceDispatcher" class="com.hkt.module.core.rest.ProxyDispatcher">
+    <property name="module" value="config" />
+    <property name="serviceName" value="GenericOptionService" />
+    <property name="service" ref="GenericOptionService" />
+  </bean>
+
+  <context:annotation-config />
+  <context:component-scan base-package="com.hkt.module.config" />
+  <jpa:repositories       base-package="com.hkt.module.config" />
+</beans>

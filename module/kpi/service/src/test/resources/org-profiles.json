@@ -1,0 +1,40 @@
+{
+  "basic": {
+    "name": "HKT Consultant",
+    "fullName": "Công ty CP Tư vấn Quản trị HKT",
+    "organizationType": "cong ty co phan",
+    "slogan": "Học Thức - Kinh Nghiệm - Thành Công",
+    "logoURL": "",
+    "foundedDate": "3/26/2011",
+    "terminatedDate": "",
+    "representative": "Phạm Văn Kiệm",
+    "registrationCode": "123456789",
+    "description": "cong ty kinh doanh 2 linh vuc, phan mem va dich thuat"
+  },
+
+  "businessRegistrations": [
+    {
+      "#": 1,
+      "registrationCode": "123456789",
+      "taxRegistrationNumber": "123456789",
+      "fullName.vn": "Ten tieng Viet day du",
+      "fullName.en": "Ten tieng Anh day du",
+      "representative": "Phạm Văn Kiệm",
+      "charterCapital": 3000000000,
+      "legalCapital": 1000000000,
+      "domain": "phan mem, dich thuat ..."
+    },
+
+    {
+      "#": 1,
+      "registrationCode": "123456789",
+      "taxRegistrationNumber": "123456789",
+      "fullName.vn": "Ten tieng Viet day du",
+      "fullName.en": "Ten tieng Anh day du",
+      "representative": "Phạm Văn Kiệm",
+      "charterCapital": 3000000000,
+      "legalCapital": 1000000000,
+      "domain": "phan mem, dich thuat ..."
+    }
+  ]
+}

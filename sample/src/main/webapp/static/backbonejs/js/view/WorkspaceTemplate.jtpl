@@ -1,0 +1,9 @@
+<table>
+  <%persons.each(function(person) { %>
+  <tr>
+    <td><%=person.get('id')%></td>
+    <td><%=person.get('name')%></td>
+    <td><%=person.get('time')%></td>
+  </tr>
+  <%}); %>
+</table>

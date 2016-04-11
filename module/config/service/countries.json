@@ -1,0 +1,56 @@
+[
+ {
+   "name": "Việt Nam", 
+   "code": "VN", 
+   "index": 1,
+   "flag": "Quốc kì Việt Nam",
+   "description": "Việt Nam",
+   
+   "provinces": [
+     {
+       "name": "Bắc Giang",
+       "code": "BG", 
+       "index": 1,
+       "description": "Bắc Giang",
+       "cities": [
+         {"name": "Bắc Giang", "description": "Bắc Giang"}
+       ]
+     },
+     {
+       "name": "Bắc Ninh",
+       "code": "BN", 
+       "index": 2,
+       "description": "Bắc Ninh",
+       "cities": [
+         {"name": "Bắc Ninh", "description": "Bắc Ninh"}
+       ]
+     },
+     {
+       "name": "Nam Định",
+       "code": "ND", 
+       "index": 3,
+       "description": "Nam Định",
+       "cities": [
+         {"name": "Nam Định", "description": "Nam Định"}
+       ]
+     },
+     {
+       "name": "Hưng Yên",
+       "code": "HY", 
+       "index": 4,
+       "description": "Hưng Yên",
+       "cities": [
+         {"name": "Hưng Yên", "description": "Hưng Yên"}
+       ]
+     }
+   ],
+   
+   "cities": [
+     {"name": "Hà Nội", "code": "HN", "index": 1,"description": "Hà Nội"},
+     {"name": "Hồ Chí Minh", "code": "HCM", "index": 2,"description": "Hồ Chí Minh"},
+     {"name": "Hải Phòng","code": "HP",  "index": 3,"description": "Hải Phòng"},
+     {"name": "Đà Nẵng", "code": "DN", "index": 4,"description": "Đà Nẵng"},
+     {"name": "Cần Thơ", "code": "CT", "index": 5,"description": "Cần Thơ"}
+   ]
+ }
+]

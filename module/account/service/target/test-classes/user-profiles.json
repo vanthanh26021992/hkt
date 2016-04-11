@@ -1,0 +1,55 @@
+{
+  "basic": {
+    "personalId" : "so chung minh nhan dan",
+    "gender" : "Male/Female",
+    "firstName" : "Admin",
+    "maritalStatus" : "Single/Maried",
+    "lastName" : "System",
+    "birthday" : "1/1/1981",
+    "avatar" : "",
+    "height": "1.65",
+    "weight": "60",
+    "hobby" : "Thich choi bong da ..."
+  },
+
+  "userRelationships": [
+    {
+      "relation" : "wife",
+      "gender" : "Female",
+      "firstName" : "Wife",
+      "lastName" : "Wife",
+      "birthday" : "1/1/1981",
+      "occupation" : "giao vien"
+    },
+    {
+      "relation" : "father",
+      "gender" : "Male",
+      "firstName" : "Father",
+      "lastName" : "Father",
+      "birthday" : "1/1/1981",
+      "occupation" : "giao vien"
+    }
+  ],
+
+  "userEducations": [
+    {
+      "schoolOrInstitute" : "Dai hoc thuong Mai",
+      "from" : "1/1/2000",
+      "to" : "1/1/2004",
+      "major" : "Chuyên Ngành Vi Tính",
+      "certificate" : "Bằng Đại Học",
+      "language" : "Tieng Viet",
+      "note" : "Bằng đại học chuyên ngành vi tính"
+    }
+  ],
+
+  "userWorks": [
+    {
+      "organization" : "HKT",
+      "from" : "2011",
+      "to" : "",
+      "position" : "Chu tich hoi dong quan tri", 
+      "description" : "Chu tich hoi dong quan tri, pho giam doc"
+    }
+  ]
+}

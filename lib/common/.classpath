@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/test/java" output="target/test-classes"/>
+  <classpathentry kind="src" path="src/main/java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/commons-cli/commons-cli/1.2/commons-cli-1.2.jar" sourcepath="M2_REPO/commons-cli/commons-cli/1.2/commons-cli-1.2-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Administrator/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.9.7/jackson-core-asl-1.9.7.jar" sourcepath="M2_REPO/org/codehaus/jackson/jackson-core-asl/1.9.7/jackson-core-asl-1.9.7-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.9.7/jackson-mapper-asl-1.9.7.jar" sourcepath="M2_REPO/org/codehaus/jackson/jackson-mapper-asl/1.9.7/jackson-mapper-asl-1.9.7-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8.jar" sourcepath="M2_REPO/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Administrator/.m2/repository/dk/brics/automaton/automaton/1.11-8/automaton-1.11-8-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/4.8.2/junit-4.8.2.jar" sourcepath="M2_REPO/junit/junit/4.8.2/junit-4.8.2-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Administrator/.m2/repository/junit/junit/4.8.2/junit-4.8.2-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Administrator/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-simple/1.6.4/slf4j-simple-1.6.4.jar" sourcepath="M2_REPO/org/slf4j/slf4j-simple/1.6.4/slf4j-simple-1.6.4-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/C:/Users/Administrator/.m2/repository/org/slf4j/slf4j-simple/1.6.4/slf4j-simple-1.6.4-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+</classpath>

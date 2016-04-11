@@ -1,0 +1,6 @@
+com\hkt\module\config\locale\LocalServiceUnitTest.class
+com\hkt\module\config\webui\UIConfigRestDispatcherUnitTest.class
+com\hkt\module\config\AbstractUnitTest.class
+com\hkt\module\config\webui\UIConfigServiceUnitTest.class
+com\hkt\module\config\webui\UIConfigRestDispatcherUnitTest$1.class
+com\hkt\module\config\generic\GenericOptionServiceUnitTest.class

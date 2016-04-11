@@ -1,0 +1,8 @@
+{
+  "module": "config",
+  "service": "LocaleService",
+  "name": "language",
+
+  "options": [
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "kpiRates": [
+    { "number": "1", "sort": "Rất kém" },
+    { "number": "2", "sort": "Kém" },
+    { "number": "3", "sort": "Trung bình" },
+    { "number": "4", "sort": "Tốt" },
+    { "number": "5", "sort": "Rất tốt" }
+  ],
+  "decentralization": [
+     { "name": "Trưởng phòng"},
+     { "name": "Phó phòng"},
+     { "name": "Nhân viên"}
+  ]
+}

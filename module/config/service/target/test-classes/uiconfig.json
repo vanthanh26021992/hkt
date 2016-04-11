@@ -1,0 +1,32 @@
+{
+  "modules": [
+    {
+      "name":  "account",
+      "permission": { "group": "hkt/webui/account", "capability": "ADMIN" } ,
+      "screens": [
+         { 
+           "name": "Accounts",
+           "permission": { "group": "hkt/webui/account/Accounts" , "capability": "ADMIN" } 
+         },
+         { "name": "Groups"}
+      ]
+    },
+
+    {
+      "name":  "accounting",
+      "permission": { "group": "hkt/webui/accounting", "capability": "READ"  } ,
+      "screens": [
+         { "name": "Invoices" },
+         { "name": "Banks" }
+      ]
+    },
+    {
+      "name":  "test",
+      "permission": { "group": "hkt/webui/admin" , "capability": "ADMIN" } ,
+      "screens": [
+         { "name": "Tests" },
+         { "name": "Samples" }
+      ]
+    }
+  ]
+}

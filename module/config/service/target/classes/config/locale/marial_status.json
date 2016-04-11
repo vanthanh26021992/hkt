@@ -1,0 +1,11 @@
+{
+  "module": "config",
+  "service": "LocaleService",
+  "name": "marital_status",
+
+  "options": [
+    { "label": "Độc thân", "code": "single", "priority": 1, "description": "Độc thân" },
+    { "label": "Đã lập gia đình", "code": "married", "priority": 2, "description": "Đã lập gia đình" },
+    { "label": "Khác", "code": "orther", "priority": 3, "description": "Khác" }
+  ]
+}
