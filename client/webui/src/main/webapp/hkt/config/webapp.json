@@ -1,0 +1,29 @@
+{
+  "adminAuthentication": {
+    "loginId": "admin", "password": "admin"
+  },
+
+  "webuiConfig": {
+    "language": "vn",
+
+    "modules": [
+      {
+        "name":  "account",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/account" } ,
+        "screens": [
+           { "name": "Accounts"},
+           { "name": "ListGroup"},
+           { "name": "Groups"}
+        ]
+      },
+      {
+      	"name": "setting",
+      	"permission": { "capability": "ADMIN", "group": "hkt/webui/setting" } ,
+      	"screens": [
+      		{"name": "Cities"},
+      		{"name": "contentMenu"}
+     	]	
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                            http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>com.hkt</groupId>
+    <artifactId>config</artifactId>
+    <version>1.0</version>
+  </parent> 
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>hkt.client.webui</artifactId>
+  <name>HKT :: Webui</name>
+  <packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+      <version>${org.springframework.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+      <version>${org.springframework.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+      <version>${org.springframework.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+      <version>${org.springframework.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+      <version>${org.springframework.version}</version>
+		</dependency>
+
+    <dependency>
+      <groupId>com.hkt</groupId>
+      <artifactId>hkt.module.core.service</artifactId>
+      <version>${com.hkt.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hkt</groupId>
+      <artifactId>hkt.module.account.service</artifactId>
+      <version>${com.hkt.version}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.hkt</groupId>
+      <artifactId>hkt.module.kpi.service</artifactId>
+      <version>${com.hkt.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hkt</groupId>
+      <artifactId>hkt.module.cms.service</artifactId>
+      <version>${com.hkt.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.hkt</groupId>
+      <artifactId>hkt.module.config.service</artifactId>
+      <version>${com.hkt.version}</version>
+    </dependency>
+   
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes>
+        </configuration>
+      </plugin>
+
+      <plugin>
+       
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>maven-jetty-plugin</artifactId>
+        <version>6.1.26</version>
+       
+         <!--
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.2.8.v20150217</version>
+         -->
+        <configuration>
+          <scanIntervalSeconds>3</scanIntervalSeconds>
+          <webAppConfig>
+            <contextPath>/</contextPath>
+            <tempDirectory>target/work</tempDirectory>
+          </webAppConfig>
+
+          <connectors>
+            <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+              <port>7080</port>
+              <maxIdleTime>60000</maxIdleTime>
+            </connector>
+          </connectors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

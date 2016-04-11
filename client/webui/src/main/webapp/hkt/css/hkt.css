@@ -1,0 +1,137 @@
+html, body {
+  height: 100% ;
+}
+table {
+  width: 100%;
+  border-collapse:collapse;
+  margin: 0px auto;
+}
+
+th, td {
+  padding: 5px;
+}
+
+
+#page {
+	height: 100% ;
+}
+
+#body {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+#workspace {
+  margin-left: 230px ;
+}
+
+#navspace {
+  width: 200px ;
+  float: left ;
+}
+
+.ui-state-disabled, input[disabled], select[disabled], textarea[disabled]{
+	opacity: 1;
+	border-color: #E6E6E6;
+}
+
+.layout-200-rest {
+  height:auto ;
+}
+
+.layout-200-rest .col-left {
+  float: left ;
+  width: 200px ;
+  padding: 10px ;
+}
+
+.layout-200-rest .col-right {
+  margin-left: 220px ;
+  padding: 10px ;
+}
+
+.layout-150-rest {
+  height:auto ;
+}
+
+.layout-150-rest .col-left {
+  float: left ;
+  width: 150px ;
+  padding: 10px ;
+}
+
+.layout-150-rest .col-right {
+  margin-left: 170px ;
+  padding: 10px ;
+}
+
+.block-border {
+  padding: 10px ;
+}
+
+
+
+.ui-page-theme-b a.ui-internal-link {
+	color: #000000!important /*{a-body-link-color}*/ ;
+  text-decoration: none ;
+}
+
+.ui-page-theme-b a.ui-internal-link:hover {
+  text-decoration: underline ;
+}
+
+.ui-page-theme-b .ui-origin-text {
+  color: #333 ;
+}
+
+.ui-page-theme-b .ui-new-text {
+  color: #c0b659 ;
+}
+
+.ui-page-theme-b .ui-modified-text {
+  color: #a7470c ;
+}
+
+.ui-page-theme-b .ui-deleted-text {
+  color: #c52716 ;
+}
+
+.ui-page-theme-b .ui-error-text {
+  color: #c52716 ;
+}
+
+ .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 16px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border: 1px solid #999;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
