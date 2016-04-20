@@ -1,3 +1,65 @@
-<div class="listMenu">
-	
+<div class="row">
+	<form action="">
+		<fieldset>
+			<legend>Chức năng bán hàng</legend>
+			<%
+				for (var i = 0; i < listMenuItem.length; i++) {
+			%>
+			<div class="menuCol col-xs-6 col-md-4">
+				<div moduleId="<%=module%>/<%=listMenuItem[i]%>"
+					class="onClickMenuItemModule onClickMenuItem btn">
+					<img alt="" moduleId="<%=module%>/<%=listMenuItem[i]%>"
+						class="onClickMenuItem" src="images/doanhnghiep1.png"> 
+						<a class="onClickMenuItem btn " moduleId="<%=module%>/<%=listMenuItem[i]%>" href="#"> <%=listMenuItem[i]%>
+					</a>
+				</div>
+			</div>
+			<%
+				}
+			%>
+		</fieldset>
+	</form>
+
+
+
+		<fieldset>
+			<legend>Chức năng bán hàng</legend>
+			<%
+				for (var i = 0; i < listMenuItem.length; i++) {
+			%>
+			<div class="menuCol col-xs-6 col-md-4">
+				<div moduleId="<%=module%>/<%=listMenuItem[i]%>"
+					class="onClickMenuItemModule onClickMenuItem btn">
+					<img alt="" moduleId="<%=module%>/<%=listMenuItem[i]%>"
+						class="onClickMenuItem" src="images/doanhnghiep1.png"> 
+						<a class="onClickMenuItem btn " moduleId="<%=module%>/<%=listMenuItem[i]%>" href="#"> <%=listMenuItem[i]%>
+					</a>
+				</div>
+			</div>
+			<%
+				}
+			%>
+		</fieldset>
 </div>
+
+
+<style>
+fieldset{
+
+    border: 1px solid threedface !important;
+}
+	
+.row{
+	border-top: 0px !important;
+	border:  2px groove #CCCCFF;
+	padding-left: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px !important;
+	margin-right: 5px;
+}
+legend {
+	color: red;
+	font-weight: 900;	
+	border-bottom: 0px solid #e5e5e5;
+}
+</style>

@@ -79,6 +79,7 @@ define([ 'jquery', 'underscore', 'backbone', 'service/service', 'ui/UITable',
 			}
 		},
 		init : function(viewStack) {
+			
 			this.viewStack = viewStack;
 			this.isSave = true;
 			var result = service.KpiService.getAllCity().data;
@@ -113,6 +114,7 @@ define([ 'jquery', 'underscore', 'backbone', 'service/service', 'ui/UITable',
 	});
 	var UIGroups = module.UIScreen.extend({
 		initialize : function(options) {
+			
 			this.groupList = new UIGroupList().init(null);
 		},
 		activate : function() {

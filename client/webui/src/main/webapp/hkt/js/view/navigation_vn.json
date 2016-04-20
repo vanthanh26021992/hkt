@@ -1,12 +1,25 @@
 {
+
+  "sale": "Bán Hàng",
+  "sale.Screen": "Màn hình bán hàng",
+  "sale.Liabilities": "Danh sách công nợ",
+  "sale.Orders": "Quản lý hóa đơn",
+  "sale.Spendings": "Quản lý sử dụng",
+  "sale.Taxs": "Thuế hàng hóa",
+  "sale.BestPrices": "Bảng giá hiện hành",
+  "sale.Prices": "Quản lý bảng giá",
+  "sale.Products": "Quản lý sản phẩm",
+  "sale.Settings": "Thiết lập bán hàng",
+  
   "account": "Tổ chức Nhân sự",
   "account.Accounts": "Nhân sự",
   "account.Groups":   "Cây Phòng ban & Nhân sự",
   "account.ListGroup": "Phòng ban",
-	
+		
   "setting": "Cấu hình",
   "setting.Cities": "Thành phố",
-  "setting.contentMenu": "Test menu",
+  "setting.Interface": "Giao diện",
+  
   "cms": "CMS",
   "cms.Explorer": "Explorer",
   "cms.Templates": "Templates",

@@ -64,9 +64,6 @@ define([
 	    	
 	    	return true;
 	    },
-	    
-	
-	
     _template: _.template(
       "<div>" +
       "  <h3 style='border-bottom: 1px solid; margin: 0px'><%=title%></h3>" +

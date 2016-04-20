@@ -2,7 +2,7 @@ define([
   'jquery',
   'underscore', 
   'backbone',
-  'module/my/MyDashboard'
+  'module/my/MyDashboard',
 ], function($, _, Backbone, MyDashboard) {
   /**
    *@type module.UIScreen
@@ -160,12 +160,12 @@ define([
       this.addModule(uiModuleConfig) ;
     };
   };
-  
+ 
   var module = {
     Screen:        Screen,
     UIScreen:      UIScreen,
     Module:        Module,
-    ModuleManager: ModuleManager 
+    ModuleManager: ModuleManager ,
   } ;
   return module ;
 });

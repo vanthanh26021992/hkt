@@ -5,8 +5,23 @@
 
   "webuiConfig": {
     "language": "vn",
-
     "modules": [
+      {
+        "name":  "sale",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/sale" } ,
+        "screens": 
+        [
+           { "name": "Screen"},
+           { "name": "Liabilities"},
+           { "name": "Orders"},
+           { "name": "Spendings"},
+           { "name": "Taxs"},
+           { "name": "BestPrices"},
+           { "name": "Prices"},
+           { "name": "Products"},
+           { "name": "Settings"}
+        ]
+      },
       {
         "name":  "account",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/account" } ,
@@ -21,7 +36,7 @@
       	"permission": { "capability": "ADMIN", "group": "hkt/webui/setting" } ,
       	"screens": [
       		{"name": "Cities"},
-      		{"name": "contentMenu"}
+      		{"name": "Interface"}
      	]	
       }
     ]

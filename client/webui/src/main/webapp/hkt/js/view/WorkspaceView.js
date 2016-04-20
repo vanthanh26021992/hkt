@@ -11,6 +11,7 @@ define([
     el: $("#workspace"),
     /**@type module.ModuleManager */
     moduleManager: null ,
+    
     /**@type module.Module */
     activeModule: null, 
   
@@ -28,15 +29,6 @@ define([
     
     /**@memberOf view.WorkspaceView */
     
-    activateMenu: function(moduleId) {
-        var array = moduleId.split('/') ;
-        var moduleName = array[0] ;
-        var submoduleName = array[1] ;
-        if(UIPopup.getPermission(submoduleName,"read")){
-      	  this.moduleManager.activate(moduleName, submoduleName) ;
-        }
-       
-      },
     
     activateModule: function(moduleId) {
       var array = moduleId.split('/') ;
@@ -50,7 +42,7 @@ define([
     
     /**@memberOf view.WorkspaceView */
     activateMy: function() {
-      this.moduleManager.activateMy() ;
+      this.moduleManager.activateMy();
     }
   });
   

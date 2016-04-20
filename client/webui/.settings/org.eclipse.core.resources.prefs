@@ -1,8 +1,11 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/hkt/config/webapp.json=UTF-8
 encoding//src/main/webapp/hkt/js/module/account/Groups.jtpl=UTF-8
+encoding//src/main/webapp/hkt/js/module/account/ListMenu.jtpl=UTF-8
 encoding//src/main/webapp/hkt/js/module/account/Priority.jtpl=UTF-8
 encoding//src/main/webapp/hkt/js/module/account/account_vn.json=UTF-8
 encoding//src/main/webapp/hkt/js/module/kpi/UITreeKPI.jtpl=UTF-8
+encoding//src/main/webapp/hkt/js/module/setting/Interface.jtpl=UTF-8
+encoding//src/main/webapp/hkt/js/view/NavigationTemplate.jtpl=UTF-8
 encoding//src/main/webapp/hkt/js/view/navigation_en.json=UTF-8
 encoding//src/main/webapp/hkt/js/view/navigation_vn.json=UTF-8
