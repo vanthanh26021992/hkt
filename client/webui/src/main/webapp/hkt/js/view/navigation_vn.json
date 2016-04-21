@@ -1,4 +1,11 @@
 {
+  "revenue"	: "Thu chi & Mua hàng",
+  "discount" : "Khuyến mãi",
+  "store" : "Kho & Hàng hóa",
+  "customer" : "Khách hàng & Đối tác",
+  "employee" : "Nhân sự & Quyền",
+  "area" : "Khu vực bán hàng",
+  "system" : "Hệ thống",
 
   "sale": "Bán Hàng",
   "sale.Screen": "Màn hình bán hàng",

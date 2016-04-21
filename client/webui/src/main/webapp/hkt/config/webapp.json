@@ -6,7 +6,7 @@
   "webuiConfig": {
     "language": "vn",
     "modules": [
-      {
+    {
         "name":  "sale",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/sale" } ,
         "screens": 
@@ -22,6 +22,56 @@
            { "name": "Settings"}
         ]
       },
+    {
+        "name":  "revenue",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/revenues" } ,
+        "screens": [
+          
+        ]
+      },
+      {
+        "name":  "discount",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/discount" } ,
+        "screens": [
+          
+        ]
+      },
+      {
+        "name":  "store",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/store" } ,
+        "screens": [
+          
+        ]
+      },
+      {
+        "name":  "customer",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/customer" } ,
+        "screens": [
+          
+        ]
+      },
+      {
+        "name":  "employee",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/employee" } ,
+        "screens": [
+           
+        ]
+      },
+      {
+        "name":  "area",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/area" } ,
+        "screens": [
+          
+        ]
+      },
+      {
+        "name":  "system",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/system" } ,
+        "screens": [
+          
+        ]
+      },
+      
       {
         "name":  "account",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/account" } ,

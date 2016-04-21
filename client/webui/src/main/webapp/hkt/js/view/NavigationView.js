@@ -14,6 +14,7 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 	NavigationView = Backbone.View.extend({
 		el : $("#navspace"),
 		model : null,
+		timeNow : null,
 
 		/** @type module.ModuleManager */
 		moduleManager : null,
@@ -50,44 +51,39 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 		},
 		/** @memberOf view.NavigationView */
 		render : function() {
+			var self = this;
 			var res = i18n.getResource('view/navigation');
 			var params = {
 				res : res,
-				moduleManager : this.moduleManager
+				moduleManager : this.moduleManager,
+				timeNow : this.returnTimeNow
 			};
 			$(this.el).html(this._template(params));
 			$(this.el).trigger("create");
+			this.onLoadMenu();
+			this.returnTimeNow();
 		},
 
 		initialize : function(options) {
-			_.bindAll(this, 'render', 'onClickMenuItem', 'onMy', 'onMyTest', 'clickMenu');
+			_.bindAll(this, 'render', 'onClickMenuItem', 'onMy', 'onMyTest',
+					'clickMenu');
 			this.moduleManager = options.moduleManager;
 		},
-
 		events : {
 			'click a.onClickMenuItem' : 'onClickMenuItem',
 			'click a.onMy' : 'onMy',
 			'click a.onMyTest' : 'onMyTest',
-			'click a.clickMenu': 'clickMenu'
+			'click a.clickMenu' : 'clickMenu',
 		},
-		
-		onClickMenuItem : function(evt) {
-			console.log("1");
-			var moduleId = $(evt.target).attr("moduleId");
-			app.view.WorkspaceView.activateModule(moduleId);
-		},
-		onMy : function(evt) {
-			app.view.WorkspaceView.activateMy();
-		},
-		
-		onMyTest : function() {
-			
-		},
-		clickMenu: function (evt){
-			var menuId = $(evt.target).attr("nav-submenu");
+		onLoadMenu : function() {
+			var menuId = $('#sale').attr("nav-submenu");
+			$('#sale').addClass('active');
+			// console.log(menuId);
 			var listMenu = [];
+			var moduleName = null;
 			this.moduleManager.getModules().forEach(function(module) {
 				if (module.config.name == menuId) {
+					moduleName = module.config.name;
 					module.screens.forEach(function(screen) {
 						listMenu.push(screen.config.name);
 					});
@@ -96,19 +92,24 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 			var ListMenuView = Backbone.View.extend({
 				el : $("#workspace"),
 				model : null,
-				module: null,
+				module : null,
+				moduleName : null,
 				listMenuItem : [],
 				_template : _.template(ListMenu),
 				initialize : function() {
-					_.bindAll(this, 'render','onClickMenuItem' );
+					_.bindAll(this, 'render', 'onClickMenuItem');
 					this.listMenuItem = listMenu;
-					this.module=menuId;
+					this.module = menuId;
+					this.moduleName = moduleName;
 					this.render();
 				},
 				render : function() {
+					var res = i18n.getResource('view/navigation');
 					var params = {
+						res : res,
 						listMenuItem : this.listMenuItem,
-						module: this.module
+						module : this.module,
+						moduleName : this.moduleName
 					};
 					$(this.el).html(this._template(params));
 					$(this.el).trigger("create");
@@ -122,6 +123,116 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 					app.view.WorkspaceView.activateModule(moduleId);
 				},
 				activate : function() {
+					// this.render();
+				},
+				deactivate : function() {
+				}
+			});
+			new ListMenuView;
+		},
+		returnTimeNow : function() {
+			function time() {
+				console.log('Khong co gi');
+				var today = new Date();
+				var dd = today.getDate();
+				var mm = today.getMonth() + 1; // January is 0!
+				var yyyy = today.getFullYear();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				nowTime = h + ":" + m + ":" + s;
+				if (dd < 10) {
+					dd = '0' + dd
+				}
+				if (mm < 10) {
+					mm = '0' + mm
+				}
+				today = dd + '/' + mm + '/' + yyyy;
+
+				tmp = '<span class="date">' + today + ' | ' + nowTime
+						+ '</span>';
+
+				document.getElementById("timer").innerHTML = tmp;
+
+				clocktime = setTimeout("time()", "500", "JavaScript");
+				function checkTime(i) {
+					if (i < 10) {
+						i = "0" + i;
+					}
+					return i;
+				}
+			}
+
+		},
+		onClickMenuItem : function(evt) {
+			var moduleId = $(evt.target).attr("moduleId");
+			app.view.WorkspaceView.activateModule(moduleId);
+		},
+		onMy : function(evt) {
+			app.view.WorkspaceView.activateMy();
+		},
+
+		onMyTest : function() {
+
+		},
+		clickMenu : function(evt) {
+			var menuId = $(evt.target).attr("nav-submenu");
+			// console.log(menuId);
+			var listMenu = [];
+			//var listImages = [];
+			var moduleName = null;
+			this.moduleManager.getModules().forEach(function(module) {
+				if (module.config.name == menuId) {
+					moduleName = module.config.name;
+					/*module.images.forEach(function(image){
+						listImages.push(image.config.image);
+						console.log(image.config.image);
+					});*/
+					module.screens.forEach(function(screen) {
+						listMenu.push(screen.config.name);
+					});
+				}
+			});
+			var ListMenuView = Backbone.View.extend({
+				el : $("#workspace"),
+				model : null,
+				module : null,
+				moduleName : null,
+				//listImages : [],
+				listMenuItem : [],
+				_template : _.template(ListMenu),
+				initialize : function() {
+					_.bindAll(this, 'render', 'onClickMenuItem');
+					this.listMenuItem = listMenu;
+					this.module = menuId;
+					this.moduleName = moduleName;
+					//this.listImages = listImages;
+					this.render();
+				},
+				render : function() {
+					var res = i18n.getResource('view/navigation');
+					var params = {
+						res : res,
+						listMenuItem : this.listMenuItem,
+						module : this.module,
+						moduleName : this.moduleName,
+						//listImages : this.listImages
+					};
+					$(this.el).html(this._template(params));
+					$(this.el).trigger("create");
+				},
+				events : {
+					'click a.onClickMenuItem' : 'onClickMenuItem',
+					'click div.onClickMenuItem' : 'onClickMenuItem',
+				},
+
+				onClickMenuItem : function(evt) {
+					var moduleId = $(evt.target).attr("moduleId");
+					app.view.WorkspaceView.activateModule(moduleId);
+				},
+				activate : function() {
 					this.render();
 				},
 
@@ -129,7 +240,6 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 				}
 			});
 			new ListMenuView();
-			
 		},
 
 	});
