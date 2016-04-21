@@ -1,0 +1,25 @@
+	<label class="radio-inline"><input class="rdGiaoDien" type="radio" name="rdGiaoDien"
+		value="images/Fond.jpg">Màu cam</label>
+	<label class="radio-inline"><input class="rdGiaoDien" type="radio" name="rdGiaoDien"
+		value="images/FondBordeaux.jpg">Màu hồng</label>
+	<label class="radio-inline"><input class="rdGiaoDien" type="radio" name="rdGiaoDien"
+		value="images/FondGris.jpg">Màu bạc</label>
+	<label class="radio-inline"><input class="rdGiaoDien" type="radio" name="rdGiaoDien"
+		value="images/FondJaune.jpg">Màu vàng</label>
+	<label class="radio-inline"><input class="rdGiaoDien" type="radio" name="rdGiaoDien"
+		value="images/FondVert.jpg" >Màu xanh</label>
+	<label class="radio-inline"><input class="rdGiaoDien" type="radio" name="rdGiaoDien"
+		value="" checked="checked">Màn hình trắng</label>
+<script>
+$('input:radio[name=rdGiaoDien]').click(function(){
+	if($('input:radio[name=rdGiaoDien]:checked')){
+		var url=$('input:radio[name=rdGiaoDien]:checked').attr('value');
+		$('#page').css({'background': "url('"+url+"') no-repeat center center fixed"});
+		$('#page').css({'-webkit-background-size': 'cover'});
+		$('#page').css({'-moz-background-size': 'cover'});
+		$('#page').css({'-o-background-size': 'cover'});
+		$('#page').css({'background-size': 'cover'});
+	}
+		
+});
+</script>
