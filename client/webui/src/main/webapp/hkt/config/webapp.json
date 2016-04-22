@@ -11,15 +11,15 @@
         "permission": { "capability": "ADMIN", "group": "hkt/webui/sale" } ,
         "screens": 
         [
-           { "name": "Screen"},
-           { "name": "Liabilities"},
-           { "name": "Orders"},
-           { "name": "Spendings"},
-           { "name": "Taxs"},
-           { "name": "BestPrices"},
-           { "name": "Prices"},
-           { "name": "Products"},
-           { "name": "Settings"}
+           { "name": "Screen", "icon": "sale1.png"},
+           { "name": "Liabilities", "icon": "invoiceds1.png"},
+           { "name": "Orders", "icon":  "invoiceds1.png"},
+           { "name": "Spendings", "icon": "dungsau1.png"},
+           { "name": "Taxs", "icon": "tax1.png"},
+           { "name": "BestPrices", "icon": "banggia1.png"},
+           { "name": "Prices", "icon": "price1.png"},
+           { "name": "Products", "icon": "dssp1.png"},
+           { "name": "Settings", "icon": "thietlap1.png"}
         ]
       },
     {
@@ -65,14 +65,6 @@
         ]
       },
       {
-        "name":  "system",
-        "permission": { "capability": "ADMIN", "group": "hkt/webui/system" } ,
-        "screens": [
-          
-        ]
-      },
-      
-      {
         "name":  "account",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/account" } ,
         "screens": [
@@ -88,6 +80,13 @@
       		{"name": "Cities"},
       		{"name": "Interface"}
      	]	
+      },
+      {
+        "name":  "system",
+        "permission": { "capability": "ADMIN", "group": "hkt/webui/system" } ,
+        "screens": [
+          
+        ]
       }
     ]
   }

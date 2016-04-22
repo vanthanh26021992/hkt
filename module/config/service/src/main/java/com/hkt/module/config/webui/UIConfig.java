@@ -77,6 +77,7 @@ public class UIConfig implements Serializable {
   
   static public class UIScreenConfig implements Serializable {
     private String name ;
+    private String icon;
     private String label ;
     private Permission permission ;
     
@@ -88,8 +89,14 @@ public class UIConfig implements Serializable {
     
     public Permission getPermission() { return permission ; }
     public void setPermission(Permission permission) { this.permission = permission; }
-  
-    public boolean hasPermission(AccountACL acl) {
+    
+    public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+	public boolean hasPermission(AccountACL acl) {
       if(permission == null) return true ;
       return permission.hasPermission(acl) ;
     }

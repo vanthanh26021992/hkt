@@ -212,17 +212,7 @@ width: auto;
 .menuModule{
 	border-bottom: 2px groove #CCCCFF;
 }
-.menuModule ul li:HOVER #hide_showRdGiaoDienUl{
-	display: block;
-}
 
-
-.imgMenu{
-	width: 45px;
-	height: 35px;
-	text-align:justify;
-	float: left;
-}
 .menuModule ul {
   background: #FF9900;
   width: 214px;
@@ -237,18 +227,18 @@ width: auto;
   line-height: 40px;
   border-bottom: 2px solid white;
 }
-.menuModule li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  display: block;
-  height: 43px;
-  white-space: normal;
-  line-height: 50px;
-}
+
 .active {
-  background: #FF6600;
+  background-image: url("../images/home/menu3.png") !important;
 }
 .menuModule li:hover {
-  background: #FF6600;
+  background-image: url("../images/home/menu2.png");
+  
 }
+.menuModule li{
+	padding-left: 76px;
+	color: black;
+	background-image: url("../images/home/menu1.png");
+}
+
+

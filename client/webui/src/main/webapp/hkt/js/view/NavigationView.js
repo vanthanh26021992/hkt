@@ -14,7 +14,6 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 	NavigationView = Backbone.View.extend({
 		el : $("#navspace"),
 		model : null,
-		timeNow : null,
 
 		/** @type module.ModuleManager */
 		moduleManager : null,
@@ -56,7 +55,6 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 			var params = {
 				res : res,
 				moduleManager : this.moduleManager,
-				timeNow : this.returnTimeNow
 			};
 			$(this.el).html(this._template(params));
 			$(this.el).trigger("create");
@@ -73,69 +71,16 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 			'click a.onClickMenuItem' : 'onClickMenuItem',
 			'click a.onMy' : 'onMy',
 			'click a.onMyTest' : 'onMyTest',
-			'click a.clickMenu' : 'clickMenu',
+			'click li.clickMenu' : 'clickMenu',
 		},
 		onLoadMenu : function() {
-			var menuId = $('#sale').attr("nav-submenu");
-			$('#sale').addClass('active');
-			// console.log(menuId);
-			var listMenu = [];
-			var moduleName = null;
-			this.moduleManager.getModules().forEach(function(module) {
-				if (module.config.name == menuId) {
-					moduleName = module.config.name;
-					module.screens.forEach(function(screen) {
-						listMenu.push(screen.config.name);
-					});
-				}
-			});
-			var ListMenuView = Backbone.View.extend({
-				el : $("#workspace"),
-				model : null,
-				module : null,
-				moduleName : null,
-				listMenuItem : [],
-				_template : _.template(ListMenu),
-				initialize : function() {
-					_.bindAll(this, 'render', 'onClickMenuItem');
-					this.listMenuItem = listMenu;
-					this.module = menuId;
-					this.moduleName = moduleName;
-					this.render();
-				},
-				render : function() {
-					var res = i18n.getResource('view/navigation');
-					var params = {
-						res : res,
-						listMenuItem : this.listMenuItem,
-						module : this.module,
-						moduleName : this.moduleName
-					};
-					$(this.el).html(this._template(params));
-					$(this.el).trigger("create");
-				},
-				events : {
-					'click a.onClickMenuItem' : 'onClickMenuItem',
-					'click div.onClickMenuItem' : 'onClickMenuItem',
-				},
-				onClickMenuItem : function(evt) {
-					var moduleId = $(evt.target).attr("moduleId");
-					app.view.WorkspaceView.activateModule(moduleId);
-				},
-				activate : function() {
-					// this.render();
-				},
-				deactivate : function() {
-				}
-			});
-			new ListMenuView;
+			
 		},
 		returnTimeNow : function() {
-			function time() {
-				console.log('Khong co gi');
+			function time(){
 				var today = new Date();
 				var dd = today.getDate();
-				var mm = today.getMonth() + 1; // January is 0!
+				var mm = today.getMonth() + 1; 
 				var yyyy = today.getFullYear();
 				var h = today.getHours();
 				var m = today.getMinutes();
@@ -151,10 +96,7 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 				}
 				today = dd + '/' + mm + '/' + yyyy;
 
-				tmp = '<span class="date">' + today + ' | ' + nowTime
-						+ '</span>';
-
-				document.getElementById("timer").innerHTML = tmp;
+				tmp = '<span class="date">' + today + ' | ' + nowTime + '</span>';
 
 				clocktime = setTimeout("time()", "500", "JavaScript");
 				function checkTime(i) {
@@ -163,8 +105,10 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 					}
 					return i;
 				}
+				return tmp;
 			}
-
+			document.getElementById("timer").innerHTML=time();
+			console.log(document.getElementById("timer").innerHTML);
 		},
 		onClickMenuItem : function(evt) {
 			var moduleId = $(evt.target).attr("moduleId");
@@ -179,18 +123,14 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 		},
 		clickMenu : function(evt) {
 			var menuId = $(evt.target).attr("nav-submenu");
-			// console.log(menuId);
 			var listMenu = [];
-			//var listImages = [];
+			var listImages = [];
 			var moduleName = null;
 			this.moduleManager.getModules().forEach(function(module) {
 				if (module.config.name == menuId) {
 					moduleName = module.config.name;
-					/*module.images.forEach(function(image){
-						listImages.push(image.config.image);
-						console.log(image.config.image);
-					});*/
 					module.screens.forEach(function(screen) {
+						listImages.push(screen.config.icon);
 						listMenu.push(screen.config.name);
 					});
 				}
@@ -200,7 +140,7 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 				model : null,
 				module : null,
 				moduleName : null,
-				//listImages : [],
+				listImages : [],
 				listMenuItem : [],
 				_template : _.template(ListMenu),
 				initialize : function() {
@@ -208,7 +148,7 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 					this.listMenuItem = listMenu;
 					this.module = menuId;
 					this.moduleName = moduleName;
-					//this.listImages = listImages;
+					this.listImages = listImages;
 					this.render();
 				},
 				render : function() {
@@ -218,7 +158,7 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 						listMenuItem : this.listMenuItem,
 						module : this.module,
 						moduleName : this.moduleName,
-						//listImages : this.listImages
+						listImages : this.listImages
 					};
 					$(this.el).html(this._template(params));
 					$(this.el).trigger("create");

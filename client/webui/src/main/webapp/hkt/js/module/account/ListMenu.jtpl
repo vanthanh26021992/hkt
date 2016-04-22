@@ -9,7 +9,7 @@
 				<div moduleId="<%=module%>/<%=listMenuItem[i]%>"
 					class="onClickMenuItemModule onClickMenuItem btn">
 					<img alt="" moduleId="<%=module%>/<%=listMenuItem[i]%>"
-						class="onClickMenuItem" src="images/doanhnghiep1.png"> 
+						class="onClickMenuItem" src="images/<%=listImages[i]%>"> 
 						<a class="onClickMenuItem btn " moduleId="<%=module%>/<%=listMenuItem[i]%>" href="#"> <%=res(listMenuItem[i])%>
 					</a>
 				</div>
