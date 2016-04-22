@@ -11,7 +11,7 @@
         "permission": { "capability": "ADMIN", "group": "hkt/webui/sale" } ,
         "screens": 
         [
-           { "name": "Screen", "icon": "sale1.png"},
+           { "name": "Screen", "icon": "sale1.png", "underName": "nothing", "underIcon": "nothing"},
            { "name": "Liabilities", "icon": "invoiceds1.png"},
            { "name": "Orders", "icon":  "invoiceds1.png"},
            { "name": "Spendings", "icon": "dungsau1.png"},
@@ -21,7 +21,9 @@
            { "name": "Products", "icon": "dssp1.png"},
            { "name": "Settings", "icon": "thietlap1.png"}
         ]
-      },
+      
+        
+    },
     {
         "name":  "revenue",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/revenues" } ,

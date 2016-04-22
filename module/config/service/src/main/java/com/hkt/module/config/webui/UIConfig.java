@@ -78,10 +78,25 @@ public class UIConfig implements Serializable {
   static public class UIScreenConfig implements Serializable {
     private String name ;
     private String icon;
+    private String underName;
+    private String underIcon;
     private String label ;
     private Permission permission ;
     
-    public String getName() { return name; }
+    
+    public String getUnderName() {
+		return underName;
+	}
+	public void setUnderName(String underName) {
+		this.underName = underName;
+	}
+	public String getUnderIcon() {
+		return underIcon;
+	}
+	public void setUnderIcon(String underIcon) {
+		this.underIcon = underIcon;
+	}
+	public String getName() { return name; }
     public void setName(String name) { this.name = name ; }
 
     public String getLabel() { return this.label ;}
