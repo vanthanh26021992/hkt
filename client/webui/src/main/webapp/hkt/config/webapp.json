@@ -11,15 +11,15 @@
         "permission": { "capability": "ADMIN", "group": "hkt/webui/sale" } ,
         "screens": 
         [
-           { "name": "Screen", "icon": "sale1.png", "underName": "nothing", "underIcon": "nothing"},
-           { "name": "Liabilities", "icon": "invoiceds1.png"},
-           { "name": "Orders", "icon":  "invoiceds1.png"},
-           { "name": "Spendings", "icon": "dungsau1.png"},
-           { "name": "Taxs", "icon": "tax1.png"},
-           { "name": "BestPrices", "icon": "banggia1.png"},
-           { "name": "Prices", "icon": "price1.png"},
-           { "name": "Products", "icon": "dssp1.png"},
-           { "name": "Settings", "icon": "thietlap1.png"}
+           { "name": "Screen", "icon": "sale1.png", "underName": "Screen", "underIcon": "sale1.png", "moduleName": "Báo cáo thống kê"},
+           { "name": "Liabilities", "icon": "invoiceds1.png", "underName": "Screen", "underIcon": "sale1.png" },
+           { "name": "Orders", "icon":  "invoiceds1.png", "underName": "Screen", "underIcon": "sale1.png"},
+           { "name": "Spendings", "icon": "dungsau1.png", "underName": "Screen", "underIcon": "sale1.png"},
+           { "name": "Taxs", "icon": "tax1.png", "underName": "Screen", "underIcon": "sale1.png"},
+           { "name": "BestPrices", "icon": "banggia1.png", "underName": "Screen", "underIcon": "sale1.png"},
+           { "name": "Prices", "icon": "price1.png", "underName": "Screen", "underIcon": "sale1.png"},
+           { "name": "Products", "icon": "dssp1.png", "underName": "Screen", "underIcon": "sale1.png"},
+           { "name": "Settings", "icon": "thietlap1.png", "underName": "Screen", "underIcon": "sale1.png"}
         ]
       
         

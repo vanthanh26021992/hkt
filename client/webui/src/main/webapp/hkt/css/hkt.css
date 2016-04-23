@@ -26,12 +26,12 @@ th, td {
 }
 
 #workspace {
-	margin-left: 230px;
+	margin-left: 250px;
 	/* background-color: white; */
 }
 
 #navspace {
-	width: 216px;
+	width: 240px;
 	float: left;
 	
 }
@@ -215,13 +215,14 @@ width: auto;
 
 .menuModule ul {
   background: #FF9900;
-  width: 214px;
+  width: 232px;
   padding: 0;
   list-style-type: none;
   text-align: left;
   margin-top: 0px;
 }
 .menuModule li {
+	font-weight: 700;
   width: auto;
   height: 45px;
   line-height: 40px;

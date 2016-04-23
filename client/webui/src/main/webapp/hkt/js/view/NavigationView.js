@@ -74,13 +74,13 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 			'click li.clickMenu' : 'clickMenu',
 		},
 		onLoadMenu : function() {
-			
+
 		},
 		returnTimeNow : function() {
-			function time(){
+			function time() {
 				var today = new Date();
 				var dd = today.getDate();
-				var mm = today.getMonth() + 1; 
+				var mm = today.getMonth() + 1;
 				var yyyy = today.getFullYear();
 				var h = today.getHours();
 				var m = today.getMinutes();
@@ -96,7 +96,8 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 				}
 				today = dd + '/' + mm + '/' + yyyy;
 
-				tmp = '<span class="date">' + today + ' | ' + nowTime + '</span>';
+				tmp = '<span class="date">' + today + ' | ' + nowTime
+						+ '</span>';
 
 				clocktime = setTimeout("time()", "500", "JavaScript");
 				function checkTime(i) {
@@ -107,7 +108,7 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 				}
 				return tmp;
 			}
-			document.getElementById("timer").innerHTML=time();
+			document.getElementById("timer").innerHTML = time();
 			console.log(document.getElementById("timer").innerHTML);
 		},
 		onClickMenuItem : function(evt) {
@@ -124,12 +125,19 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 		clickMenu : function(evt) {
 			var menuId = $(evt.target).attr("nav-submenu");
 			var listMenu = [];
+			var listUnderMenuItems = [];
+			var listUnderImages = [];
 			var listImages = [];
 			var moduleName = null;
+			var moduleUnderName= null;
 			this.moduleManager.getModules().forEach(function(module) {
 				if (module.config.name == menuId) {
 					moduleName = module.config.name;
 					module.screens.forEach(function(screen) {
+						if(screen.config.moduleName!= null)
+							moduleUnderName =screen.config.moduleName;
+						listUnderMenuItems.push(screen.config.underName);
+						listUnderImages.push(screen.config.underIcon);
 						listImages.push(screen.config.icon);
 						listMenu.push(screen.config.name);
 					});
@@ -140,7 +148,10 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 				model : null,
 				module : null,
 				moduleName : null,
+				moduleUnderName: null,
 				listImages : [],
+				listUnderImages : [],
+				listUnderMenuItems : [],
 				listMenuItem : [],
 				_template : _.template(ListMenu),
 				initialize : function() {
@@ -149,6 +160,9 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 					this.module = menuId;
 					this.moduleName = moduleName;
 					this.listImages = listImages;
+					this.listUnderImages = listUnderImages;
+					this.listUnderMenuItems = listUnderMenuItems;
+					this.moduleUnderName=moduleUnderName;
 					this.render();
 				},
 				render : function() {
@@ -158,7 +172,10 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 						listMenuItem : this.listMenuItem,
 						module : this.module,
 						moduleName : this.moduleName,
-						listImages : this.listImages
+						listImages : this.listImages,
+						listUnderMenuItems : this.listUnderMenuItems,
+						listUnderImages : this.listUnderImages,
+						moduleUnderName: this.moduleUnderName
 					};
 					$(this.el).html(this._template(params));
 					$(this.el).trigger("create");

@@ -23,16 +23,16 @@
 
 
 		<fieldset>
-			<legend><%=res(moduleName)%></legend>
+			<legend><%=moduleUnderName%></legend>
 			<%
-				for (var i = 0; i < listMenuItem.length; i++) {
+				for (var i = 0; i < listUnderMenuItems.length; i++) {
 			%>
 			<div class="menuCol col-xs-6 col-md-4">
-				<div moduleId="<%=module%>/<%=listMenuItem[i]%>"
+				<div moduleId="<%=module%>/<%=listUnderMenuItems[i]%>"
 					class="onClickMenuItemModule onClickMenuItem btn">
-					<img alt="" moduleId="<%=module%>/<%=listMenuItem[i]%>"
-						class="onClickMenuItem" src="images/doanhnghiep1.png"> 
-						<a class="onClickMenuItem btn " moduleId="<%=module%>/<%=listMenuItem[i]%>" href="#"> <%=res(listMenuItem[i])%>
+					<img alt="" moduleId="<%=module%>/<%=listUnderMenuItems[i]%>"
+						class="onClickMenuItem" src="images/<%=listUnderImages[i]%>"> 
+						<a class="onClickMenuItem btn " moduleId="<%=module%>/<%=listUnderMenuItems[i]%>" href="#"> <%=res(listUnderMenuItems[i])%>
 					</a>
 				</div>
 			</div>

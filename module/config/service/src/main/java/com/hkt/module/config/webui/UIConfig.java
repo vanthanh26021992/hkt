@@ -79,12 +79,19 @@ public class UIConfig implements Serializable {
     private String name ;
     private String icon;
     private String underName;
+    private String moduleName;
     private String underIcon;
     private String label ;
     private Permission permission ;
     
     
-    public String getUnderName() {
+    public String getModuleName() {
+		return moduleName;
+	}
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+	}
+	public String getUnderName() {
 		return underName;
 	}
 	public void setUnderName(String underName) {
