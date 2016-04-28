@@ -18,7 +18,7 @@ define([
     
     initialize: function () {
       this.model = new Banner({view: this}) ;
-      _.bindAll(this, 'render', 'onSelectLanguage') ;
+      _.bindAll(this, 'render', 'onSelectLanguage','onHideTestMenu' ) ;
     },
     
     _template: _.template(BannerViewTmpl),
@@ -30,12 +30,17 @@ define([
       } ;
       $(this.el).html(this._template(params));
       $(this.el).trigger("create") ;
+      this.onHideTestMenu();
     },
     
     events: {
-      'change select.onSelectLanguage': 'onSelectLanguage'
+      'change select.onSelectLanguage': 'onSelectLanguage',
+      load: 'onHideTestMenu'
     },
-    
+    onHideTestMenu: function(){
+    	console.log("da load vao day");
+    	$('#testMenu').hide();
+    },
     onSelectLanguage: function(evt) {
       var language = $(evt.target, ".onSelectLanguage").find(":selected").attr("value") ;
       var params = {

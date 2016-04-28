@@ -11,15 +11,15 @@
         "permission": { "capability": "ADMIN", "group": "hkt/webui/sale" } ,
         "screens": 
         [
-           { "name": "Screen", "icon": "sale1.png", "underName": "Screen", "underIcon": "sale1.png", "moduleName": "Báo cáo thống kê"},
-           { "name": "Liabilities", "icon": "invoiceds1.png", "underName": "Screen", "underIcon": "sale1.png" },
-           { "name": "Orders", "icon":  "invoiceds1.png", "underName": "Screen", "underIcon": "sale1.png"},
-           { "name": "Spendings", "icon": "dungsau1.png", "underName": "Screen", "underIcon": "sale1.png"},
-           { "name": "Taxs", "icon": "tax1.png", "underName": "Screen", "underIcon": "sale1.png"},
-           { "name": "BestPrices", "icon": "banggia1.png", "underName": "Screen", "underIcon": "sale1.png"},
-           { "name": "Prices", "icon": "price1.png", "underName": "Screen", "underIcon": "sale1.png"},
-           { "name": "Products", "icon": "dssp1.png", "underName": "Screen", "underIcon": "sale1.png"},
-           { "name": "Settings", "icon": "thietlap1.png", "underName": "Screen", "underIcon": "sale1.png"}
+           { "name": "Screen", "icon": "sale1.png", "underName": "ThongKeThuChi", "underIcon": "tk1.png", "moduleName": "Báo cáo thống kê"},
+           { "name": "Liabilities", "icon": "invoiceds1.png", "underName": "ThongKeBanHang", "underIcon": "tknhansu1.png" },
+           { "name": "Orders", "icon":  "invoiceds1.png", "underName": "ThongKeMuaHang", "underIcon": "tksanpham1.png"},
+           { "name": "Spendings", "icon": "dungsau1.png", "underName": "ThongKeTheoThoiGian", "underIcon": "tktime1.png"},
+           { "name": "Taxs", "icon": "tax1.png", "underName": "ThongKeTonKho", "underIcon": "tkban1.png"},
+           { "name": "BestPrices", "icon": "banggia1.png", "underName": "ThongKeDinhLuong", "underIcon": "tkbophan1.png"},
+           { "name": "Prices", "icon": "price1.png", "underName": "ThongKeDuAn", "underIcon": "tkbophan1.png"},
+           { "name": "Products", "icon": "dssp1.png", "underName": "DanhSachSanXuat", "underIcon": "datban1.png"},
+           { "name": "Settings", "icon": "thietlap1.png", "underName": "ThongKeHoaDon", "underIcon": "datban1.png"}
         ]
       
         
@@ -28,42 +28,88 @@
         "name":  "revenue",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/revenues" } ,
         "screens": [
-          
+           { "name": "PhieuThuTien", "icon": "invoice1.png", "underName": "ThongKeThuChi", "underIcon": "tk1.png", "moduleName": "Báo cáo thống kê"},
+           { "name": "PhieuChiTien", "icon": "invoice1.png", "underName": "ThongKeBanHang", "underIcon": "tknhansu1.png" },
+           { "name": "DS_ThuChiTien", "icon":  "datban1.png", "underName": "ThongKeMuaHang", "underIcon": "tksanpham1.png"},
+           { "name": "PhieuDatMuaHang", "icon": "order1.png", "underName": "ThongKeTheoThoiGian", "underIcon": "tktime1.png"},
+           { "name": "KhachDatHang", "icon": "order1.png", "underName": "ThongKeTonKho", "underIcon": "tkban1.png"},
+           { "name": "QuanLyDonDatHang", "icon": "dsorder1.png", "underName": "ThongKeDinhLuong", "underIcon": "tkbophan1.png"},
+           { "name": "PhieuTraHang", "icon": "tra1.png", "underName": "ThongKeDuAn", "underIcon": "tkbophan1.png"},
+           { "name": "KhachTraHang", "icon": "tra1.png", "underName": "", "underIcon": ""},
+           { "name": "QuanLyTraHang", "icon": "dsorder1.png", "underName": "DanhSachBienLai", "underIcon": "datban1.png"}
         ]
       },
       {
         "name":  "discount",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/discount" } ,
         "screens": [
-          
+           { "name": "KhuyenMaiTangSanPham", "icon": "promosanpham1.png", "underName": "LapMenu", "underIcon": "menucon1.png", "moduleName": "Chức năng nâng cao"},
+           { "name": "LapKhuyenMai", "icon": "promobophan1.png", "underName": "DanhSachMenu", "underIcon": "menu1.png" },
+           { "name": "QuanLyKhuyenMai", "icon":  "promo1.png", "underName": "LapVoucher", "underIcon": "voucher1.png"},
+           { "name": "DS_SD_KM_Tang_SP", "icon": "promodoitac1.png", "underName": "DS_Voucher", "underIcon": "dskm1.png"},
+           { "name": "DS_SuDung_KM", "icon": "promosanpham1.png", "underName": "", "underIcon": ""},
+           { "name": "LapPhieuGiamGia", "icon": "coupon1.png", "underName": "", "underIcon": ""},
+           { "name": "DS_PhieuGiamGia", "icon": "dskm1.png", "underName": "", "underIcon": ""},
+           { "name": "DS_SD_Phieu", "icon": "dskm1.png", "underName": "", "underIcon": ""}
         ]
       },
       {
         "name":  "store",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/store" } ,
         "screens": [
-          
+           { "name": "PhieuNhapKho", "icon": "xuatnhap1.png", "underName": "PhieuSanXuat", "underIcon": "thuchi1.png", "moduleName": "Báo cáo thống kê"},
+           { "name": "PhieuXuatKho", "icon": "xuatnhap1.png", "underName": "DanhSachSanXuat", "underIcon": "datban1.png" },
+           { "name": "QuanLyXuatNhap", "icon":  "xnds1.png", "underName": "QuanLyMaBarcode", "underIcon": "barcode1.png"},
+           { "name": "ChuyenKho", "icon": "chuyen1.png", "underName": "ThongKeTheoThoiGian", "underIcon": "tktime1.png"},
+           { "name": "KhaiBaoDinhLuong", "icon": "ctquanti1.png", "underName": "ThongKeTonKho", "underIcon": "tkban1.png"},
+           { "name": "QuanLyDinhLuong", "icon": "tkquanti1.png", "underName": "ThongKeDinhLuong", "underIcon": "tkbophan1.png"},
+           { "name": "ThemHangHoaMoi", "icon": "hanghoa1.png", "underName": "KiemKeKhoHang", "underIcon": "datban1.png"},
+           { "name": "QuanLyNhomHang", "icon": "nhomsp1.png", "underName": "ThietLapKho", "underIcon": "thuchi1.png"},
+           { "name": "QuanLyHangHoa", "icon": "dssp1.png", "underName": "TaoKhoHang", "underIcon": "soche1.png"}
         ]
       },
       {
         "name":  "customer",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/customer" } ,
         "screens": [
-          
+           { "name": "ThemKhachHang", "icon": "doanhnghiep1.png", "underName": "LapCoCheDiem", "underIcon": "dskm1.png", "moduleName": "Chức năng nâng cao"},
+           { "name": "ThemNhaCungCap", "icon": "usernhom1.png", "underName": "SuDungTraTruoc", "underIcon": "tratruoccon1.png" },
+           { "name": "QuanLyNhomNhaCungCap", "icon":  "canhan1.png", "underName": "DungDiem", "underIcon": "pointsused1.png"},
+           { "name": "DanhSachKhachHang", "icon": "partners1.png", "underName": "QuanLyDiemDT", "underIcon": "sudungtratruoc1.png"},
+           { "name": "DanhSachNhaCungCap", "icon": "quyen1.png", "underName": "QuanLyTraTruoc", "underIcon": "pointsql1.png"},
+           { "name": "QuanLyNhomKhachHang", "icon": "nhom1.png", "underName": "DanhSachDiemDung", "underIcon": "pointsds1.png"},
+           { "name": "QuanLyKhachHang", "icon": "partner1.png", "underName": "LapDiemNhomKhachHang", "underIcon": "pointgroup1.png"},
+           { "name": "QuanLyNhaCungCap", "icon": "doanhnghiep1.png", "underName": "DanhSachTraTruoc", "underIcon": "tratruoc1.png"},
+           { "name": "ThietLapKhachHangChung", "icon": "lappartner1.png", "underName": "", "underIcon": ""}
         ]
       },
       {
         "name":  "employee",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/employee" } ,
         "screens": [
-           
+           { "name": "NhanSuMoi", "icon": "canhan1.png", "underName": "ThongKeThuChi", "underIcon": "tk1.png", "moduleName": "Báo cáo thống kê"},
+           { "name": "ChuyenThanhNhanSu", "icon": "canhan1.png", "underName": "ThongKeBanHang", "underIcon": "tknhansu1.png" },
+           { "name": "DanhSachCaNhan", "icon":  "canhan1.png", "underName": "ThongKeMuaHang", "underIcon": "tksanpham1.png"},
+           { "name": "DanhSachNhanSu", "icon": "nhansu1.png", "underName": "ThongKeTheoThoiGian", "underIcon": "tktime1.png"},
+           { "name": "PhanQuyenChiTiet", "icon": "quyen1.png", "underName": "ThongKeTonKho", "underIcon": "tkban1.png"},
+           { "name": "DanhSachDoanhNhghiep", "icon": "doanhnghiep1.png", "underName": "ThongKeDinhLuong", "underIcon": "tkbophan1.png"},
+           { "name": "NhanVienNhomSanPham", "icon": "hanghoa1.png", "underName": "ThongKeDuAn", "underIcon": "tkbophan1.png"},
+           { "name": "CongViecHangNgay", "icon": "congviec1.png", "underName": "", "underIcon": ""},
+           { "name": "TheoDoiCongViecHangNgay", "icon": "congviecnu1.png", "underName": "", "underIcon": ""}
         ]
       },
       {
         "name":  "area",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/area" } ,
         "screens": [
-          
+           { "name": "ThemMoiBanQuay", "icon": "ban1.png", "underName": "MayInBan", "underIcon": "mayin1.png", "moduleName": "Báo cáo thống kê"},
+           { "name": "KhuVucMoi", "icon": "khuvuc1.png", "underName": "MayInKhuVuc", "underIcon": "mayin1.png" },
+           { "name": "DuAnMoi", "icon":  "duan1.png", "underName": "MayInSanPham", "underIcon": "mayin1.png"},
+           { "name": "DanhSachBanQuay", "icon": "bands1.png", "underName": "MayInPhongBan", "underIcon": "mayin1.png"},
+           { "name": "DanhSachKhuVuc", "icon": "bands1.png", "underName": "ThemCaLamViec", "underIcon": "congviec1.png"},
+           { "name": "DanhSachDuAn", "icon": "duan1.png", "underName": "", "underIcon": ""},
+           { "name": "QuanLyCuaHang", "icon": "doanhnghiep1.png", "underName": "", "underIcon": ""},
+           { "name": "LamTronSo", "icon": "doanhnghiep1.png", "underName": "", "underIcon": ""}
         ]
       },
       {
@@ -87,7 +133,15 @@
         "name":  "system",
         "permission": { "capability": "ADMIN", "group": "hkt/webui/system" } ,
         "screens": [
-          
+           { "name": "ThongTinDoanhNghiep", "icon": "doanhnghiep1.png", "underName": "QuocGia", "underIcon": "country1.png", "moduleName": "Chức năng nâng cao"},
+           { "name": "PhongBanBoPhan", "icon": "kho1.png", "underName": "ThanhPho", "underIcon": "country1.png" },
+           { "name": "DanhSachPhongBan", "icon":  "kho1.png", "underName": "NgonNgu", "underIcon": "honnhan1.png"},
+           { "name": "BanQuyen", "icon": "key1.png", "underName": "TienTe", "underIcon": "tien1.png"},
+           { "name": "LienHe", "icon": "lienhe1.png", "underName": "QuanLyMaHoaDon", "underIcon": "restart1.png"},
+           { "name": "XuLyDuLieu", "icon": "saoluu1.png", "underName": "TuDongGuiMail", "underIcon": "restart1.png"},
+           { "name": "LoaiHoaDon", "icon": "invoice1.png", "underName": "CauHinhHeThong", "underIcon": "restart1.png"},
+           { "name": "ViTriPhongBan", "icon": "donvi1.png", "underName": "TestVaDemo", "underIcon": "tkbophan1.png"},
+           { "name": "DonViSanPham", "icon": "donvi1.png", "underName": "ThietLapVaNgayXemDanhSach", "underIcon": "restart1.png"}
         ]
       }
     ]

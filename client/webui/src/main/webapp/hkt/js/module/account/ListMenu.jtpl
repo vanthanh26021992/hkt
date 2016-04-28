@@ -1,26 +1,19 @@
 <div class="row">
-	<form action="">
 		<fieldset>
 			<legend><%=res(moduleName)%></legend>
 			<%
 				for (var i = 0; i < listMenuItem.length; i++) {
 			%>
-			<div class="menuCol col-xs-6 col-md-4">
-				<div moduleId="<%=module%>/<%=listMenuItem[i]%>"
-					class="onClickMenuItemModule onClickMenuItem btn">
-					<img alt="" moduleId="<%=module%>/<%=listMenuItem[i]%>"
-						class="onClickMenuItem" src="images/<%=listImages[i]%>"> 
-						<a class="onClickMenuItem btn " moduleId="<%=module%>/<%=listMenuItem[i]%>" href="#"> <%=res(listMenuItem[i])%>
+			<div class="menuCol col-xs-6 col-md-4" moduleId="<%=module%>/<%=listMenuItem[i]%>">
+					<img class="col-xs-1 col-md-5" alt="" moduleId="<%=module%>/<%=listMenuItem[i]%>" src="images/<%=listImages[i]%>"> 
+						<a  class="col-xs-6 col-md-5" moduleId="<%=module%>/<%=listMenuItem[i]%>" >
+					 <%=res(module+ "."+ listMenuItem[i])%>
 					</a>
-				</div>
 			</div>
 			<%
 				}
 			%>
 		</fieldset>
-	</form>
-
-
 
 		<fieldset>
 			<legend><%=moduleUnderName%></legend>
@@ -28,15 +21,13 @@
 				for (var i = 0; i < listUnderMenuItems.length; i++) {
 			%>
 			<div class="menuCol col-xs-6 col-md-4">
-				<div moduleId="<%=module%>/<%=listUnderMenuItems[i]%>"
-					class="onClickMenuItemModule onClickMenuItem btn">
-					<img alt="" moduleId="<%=module%>/<%=listUnderMenuItems[i]%>"
-						class="onClickMenuItem" src="images/<%=listUnderImages[i]%>"> 
-						<a class="onClickMenuItem btn " moduleId="<%=module%>/<%=listUnderMenuItems[i]%>" href="#"> <%=res(listUnderMenuItems[i])%>
+					<img class="col-xs-1 col-md-5" alt="" moduleId="<%=module%>/<%=listUnderMenuItems[i]%>"
+						src="images/<%=listUnderImages[i]%>"> 
+						<a class="col-xs-6 col-md-5" moduleId="<%=module%>/<%=listUnderMenuItems[i]%>" > <%=res(module+ "."+ listUnderMenuItems[i])%>
 					</a>
-				</div>
 			</div>
 			<%
+					
 				}
 			%>
 		</fieldset>

@@ -123,80 +123,92 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 
 		},
 		clickMenu : function(evt) {
-			var menuId = $(evt.target).attr("nav-submenu");
-			var listMenu = [];
-			var listUnderMenuItems = [];
-			var listUnderImages = [];
-			var listImages = [];
-			var moduleName = null;
-			var moduleUnderName= null;
-			this.moduleManager.getModules().forEach(function(module) {
-				if (module.config.name == menuId) {
-					moduleName = module.config.name;
-					module.screens.forEach(function(screen) {
-						if(screen.config.moduleName!= null)
-							moduleUnderName =screen.config.moduleName;
-						listUnderMenuItems.push(screen.config.underName);
-						listUnderImages.push(screen.config.underIcon);
-						listImages.push(screen.config.icon);
-						listMenu.push(screen.config.name);
-					});
-				}
-			});
-			var ListMenuView = Backbone.View.extend({
-				el : $("#workspace"),
-				model : null,
-				module : null,
-				moduleName : null,
-				moduleUnderName: null,
-				listImages : [],
-				listUnderImages : [],
-				listUnderMenuItems : [],
-				listMenuItem : [],
-				_template : _.template(ListMenu),
-				initialize : function() {
-					_.bindAll(this, 'render', 'onClickMenuItem');
-					this.listMenuItem = listMenu;
-					this.module = menuId;
-					this.moduleName = moduleName;
-					this.listImages = listImages;
-					this.listUnderImages = listUnderImages;
-					this.listUnderMenuItems = listUnderMenuItems;
-					this.moduleUnderName=moduleUnderName;
-					this.render();
-				},
-				render : function() {
-					var res = i18n.getResource('view/navigation');
-					var params = {
-						res : res,
-						listMenuItem : this.listMenuItem,
-						module : this.module,
-						moduleName : this.moduleName,
-						listImages : this.listImages,
-						listUnderMenuItems : this.listUnderMenuItems,
-						listUnderImages : this.listUnderImages,
-						moduleUnderName: this.moduleUnderName
-					};
-					$(this.el).html(this._template(params));
-					$(this.el).trigger("create");
-				},
-				events : {
-					'click a.onClickMenuItem' : 'onClickMenuItem',
-					'click div.onClickMenuItem' : 'onClickMenuItem',
-				},
-
-				onClickMenuItem : function(evt) {
-					var moduleId = $(evt.target).attr("moduleId");
-					app.view.WorkspaceView.activateModule(moduleId);
-				},
-				activate : function() {
-					this.render();
-				},
-
-				deactivate : function() {
-				}
-			});
+				var menuId = $(evt.target).attr("nav-submenu");
+				var listMenu = [];
+				var listUnderMenuItems = [];
+				var listUnderImages = [];
+				var listImages = [];
+				var moduleName = null;
+				var moduleUnderName = null;
+				this.moduleManager.getModules().forEach(function(module) {
+					if (module.config.name == menuId) {
+						moduleName = module.config.name;
+						module.screens.forEach(function(screen) {
+							if (screen.config.underName != "") {
+								listUnderMenuItems.push(screen.config.underName);
+								listUnderImages.push(screen.config.underIcon);
+							} 
+							if (screen.config.moduleName!=null){
+								moduleUnderName = screen.config.moduleName;
+								// console.log(screen.config.moduleName)
+							}
+							listImages.push(screen.config.icon);
+							listMenu.push(screen.config.name);
+							
+						});
+					}
+				});
+				// console.log(moduleUnderName);
+				var ListMenuView = Backbone.View.extend({
+					el : $("#workspace"),
+					model : null,
+					module : null,
+					moduleName : null,
+					moduleUnderName : null,
+					listImages : [],
+					listUnderImages : [],
+					listUnderMenuItems : [],
+					listMenuItem : [],
+					_template : _.template(ListMenu),
+					initialize : function() {
+						_.bindAll(this, 'render', 'onClickMenuItem', 'onMenuCol');
+						this.listMenuItem = listMenu;
+						this.module = menuId;
+						this.moduleName = moduleName;
+						this.listImages = listImages;
+						this.listUnderImages = listUnderImages;
+						this.listUnderMenuItems = listUnderMenuItems;
+						this.moduleUnderName = moduleUnderName;
+						this.render();
+					},
+					render : function() {
+						var res = i18n.getResource('view/navigation');
+						var params = {
+							res : res,
+							listMenuItem : this.listMenuItem,
+							module : this.module,
+							moduleName : this.moduleName,
+							listImages : this.listImages,
+							listUnderMenuItems : this.listUnderMenuItems,
+							listUnderImages : this.listUnderImages,
+							moduleUnderName : this.moduleUnderName
+						};
+						$(this.el).html(this._template(params));
+						$(this.el).trigger("create");
+					},
+					events : {
+						'click a.onClickMenuItem' : 'onClickMenuItem',
+						'click div.onClickMenuItem' : 'onClickMenuItem',
+						'click div.menuCol':'onMenuCol'
+					},
+					onMenuCol: function(evt)
+					{
+						var moduleId = $(evt.target).attr("moduleId");
+						app.view.WorkspaceView.activateModule(moduleId);
+					},
+					onClickMenuItem : function(evt) {
+						var moduleId = $(evt.target).attr("moduleId");
+						app.view.WorkspaceView.activateModule(moduleId);
+					},
+					activate : function() {
+						this.render();
+					},
+	
+					deactivate : function() {
+					}
+				});
 			new ListMenuView();
+			
 		},
 
 	});

@@ -2,13 +2,13 @@
 <div class="menuModule">
 	<ul>
 		<%moduleManager.getModules().forEach(function(module) { %>
-		<li class="clickMenu" id="<%=module.config.name%>"
+		<li onclick="fadeWorkSpace()" class="clickMenu" id="<%=module.config.name%>"
 			nav-submenu="<%=module.config.name%>">
 			<%=res(module.config.name)%>
 		</li>
 		<%}); %>
 	</ul>
-	<div style="text-align: center;">
+	<div id="doanhNghiep" style="text-align: center;">
 		<!-- <p style="text-align: right;">User: Admin</p> -->
 		<p style="text-align: right; margin-right: 5px;" id="timer">a</p>
 		<p style="color: red; text-align: center; font-weight: 700">HKT Consultant</p>

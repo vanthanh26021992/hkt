@@ -1,5 +1,6 @@
 html, body {
 	height: 100%;
+	
 }
 
 table {
@@ -14,8 +15,12 @@ th, td {
 
 #page {
 	height: 100%;
+	width: 85%;
 }
-
+#quangCao{
+	width: 15%;
+	float: right;
+}
 #body {
 	clear: both;
 	display: block;
@@ -182,8 +187,23 @@ th, td {
 .menuCol:HOVER {
 	background-color: #FF9900;
 }
+.menuCol a:HOVER {
+	text-decoration: none;
+	color: black;
+}
 .menuCol {
 	height: 85px;
+	vertical-align: middle;
+} 
+.menuCol img{
+	height: 50px;
+	width: 55px;
+	padding: 0px 0px 0px 0px !important;
+} 
+.menuCol a{
+	color: black;
+	padding: 6px 12px 6px 12px;
+	word-wrap: break-word;
 } 
 fieldset{
 
@@ -198,19 +218,19 @@ fieldset{
 	padding-right: 3px;
 	padding-bottom: 3px !important;
 	margin-right: 5px;
-	max-height: 618px !important;
+	max-height: 100%;
 }
 legend {
 width: auto;
 	color: red;
-	font-weight: 900;	
+	font-weight: 700;	
 	border-bottom: 0px solid #e5e5e5;
 }
 .menuModule ul li{
 	position: relative;
 }
 .menuModule{
-	border-bottom: 2px groove #CCCCFF;
+	max-height: 100%;
 }
 
 .menuModule ul {
@@ -243,6 +263,12 @@ width: auto;
 }
 
 .nothing{
-	
+	color: red;
 }
-
+#testMenu{
+	display: block;
+    left: 0px;
+    width: auto;
+    /* top: 0px; */
+    margin-top: 3px;
+}
