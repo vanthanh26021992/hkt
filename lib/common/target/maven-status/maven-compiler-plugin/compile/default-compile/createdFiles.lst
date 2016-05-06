@@ -11,8 +11,8 @@ com\hkt\util\json\JSONReader.class
 com\hkt\util\json\JSONSerializer$GenericTypeSerializer.class
 com\hkt\util\jvm\AppInfo.class
 com\hkt\util\jvm\MemoryInfo.class
-com\hkt\util\json\JSONSerializer$GenericTypeDeserializer.class
 com\hkt\util\text\TabularPrinter.class
+com\hkt\util\json\JSONSerializer$GenericTypeDeserializer.class
 com\hkt\util\text\NumberFormatter.class
 com\hkt\util\jvm\DetailThreadInfo.class
 com\hkt\util\jvm\GarbageCollectorInfo.class

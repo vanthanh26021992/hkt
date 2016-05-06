@@ -269,6 +269,48 @@ width: auto;
 	display: block;
     left: 0px;
     width: auto;
-    /* top: 0px; */
     margin-top: 3px;
+}
+#testMenu:HOVER {
+	
+}
+
+
+/* Dien thoai di dong hien chieu doc*/
+@media all and (max-width: 320px) {
+	
+	
+}
+/* Dien thoai di dong hien chieu ngang*/
+@media all and (max-width: 480px) {
+	
+}
+/* May tinh bang hien chieu doc*/
+@media all and (max-width: 600px) {
+	
+}
+/* May tinh bang hien chieu ngang*/
+@media all and (max-width: 800px) {
+	#navspace{
+		display: block;
+	}
+}
+/* May tinh bang loai to hien chieu doc*/
+@media all and (max-width: 768px) {
+	#navspace{
+		display: none;
+		position: absolute;
+		z-index: 999;
+	}
+	#testMenu{display: block !important;}
+	#workspace{margin-left: 20px;}
+}
+/* May tinh bang loai to hien chieu ngang*/
+@media all and (max-width: 1024px) {
+	#quangCao{display: none;}
+	#page{width: 100%;}
+}
+/* Danh cho desktop */
+@media all and (min-width: 1025px) {
+	
 }

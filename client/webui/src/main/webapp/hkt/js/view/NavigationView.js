@@ -11,6 +11,7 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 	 * @type view.NavigationView
 	 * @constructor
 	 */
+	var numberOfToggle=0;
 	NavigationView = Backbone.View.extend({
 		el : $("#navspace"),
 		model : null,
@@ -63,14 +64,11 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 		},
 
 		initialize : function(options) {
-			_.bindAll(this, 'render', 'onClickMenuItem', 'onMy', 'onMyTest',
-					'clickMenu');
+			_.bindAll(this, 'render',  'onMy', 'clickMenu');
 			this.moduleManager = options.moduleManager;
 		},
 		events : {
-			'click a.onClickMenuItem' : 'onClickMenuItem',
 			'click a.onMy' : 'onMy',
-			'click a.onMyTest' : 'onMyTest',
 			'click li.clickMenu' : 'clickMenu',
 		},
 		onLoadMenu : function() {
@@ -111,18 +109,21 @@ define([ 'jquery', 'underscore', 'backbone', 'i18n',
 			document.getElementById("timer").innerHTML = time();
 			console.log(document.getElementById("timer").innerHTML);
 		},
-		onClickMenuItem : function(evt) {
-			var moduleId = $(evt.target).attr("moduleId");
-			app.view.WorkspaceView.activateModule(moduleId);
-		},
+
 		onMy : function(evt) {
 			app.view.WorkspaceView.activateMy();
 		},
 
-		onMyTest : function() {
-
-		},
 		clickMenu : function(evt) {
+			    if (window.innerWidth < 768 && window.innerWidth >= 200)
+			    {
+			    	if(numberToggle==1)
+			    		{
+			    			$('#navspace').fadeOut(500);
+			    			numberToggle = 0;
+			    			document.getElementById('testMenu').innerHTML = 'Mở menu';
+			    		}
+			    }
 				var menuId = $(evt.target).attr("nav-submenu");
 				var listMenu = [];
 				var listUnderMenuItems = [];

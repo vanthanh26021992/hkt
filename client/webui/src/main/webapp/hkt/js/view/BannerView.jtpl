@@ -1,4 +1,4 @@
-<button id="testMenu" onclick="onToggleMenu()" value="">Mo Menu</button>
+<button id="testMenu" onmouseover="onOverMenu()" onclick="onToggleMenu()" value="">Mở Menu</button>
 <div class="ui-btn-right" data-role="controlgroup" data-type="horizontal">
   
   <a href="javascript:app.view.NavigationView.toggleNav()" data-role="button" data-icon="bars">Menu</a>
